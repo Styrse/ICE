@@ -1,0 +1,34 @@
+@startuml
+class Platform{
+- String platformName
+- ArrayList<Client> clients
+- ArrayList<Server> servers
+}
+
+class Server{
+- String serverName
+- ArrayList<Client> clients
+}
+
+class Client{
+- String username
+- String password
+- HashMap<Client, Message> privateMessages
+- ArrayList<Server> servers
+}
+
+class Message{
+- Client sender
+- Client receiver
+- String message
+}
+
+Platform *-- Server
+Platform *-- Client
+
+Client *-- Message
+
+Server *-- Client
+Server *-- Message
+
+@enduml
