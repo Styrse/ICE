@@ -53,7 +53,6 @@ class Encrypting{
 + String encrypt(String message)
 + String decrypt(String message)
 }
-
 }
 
 @enduml
