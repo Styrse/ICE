@@ -11,16 +11,35 @@ class Server{
 }
 
 class Client{
+- String id
 - String username
 - String password
 - HashMap<Client, Message> privateMessages
 - ArrayList<Server> servers
+- boolean online
+- ArrayList<Client> friends
+- ArrayList<Client> blockedAccounts
+- String IP
+}
+
+class Chatroom{
+- String name
+- ArrayList<Client> clients
+- ArrayList<Message> messages
 }
 
 class Message{
 - Client sender
 - Client receiver
 - String message
+- Date date/time
+- String IP
+- String location
+}
+
+class Encrypting{
++ String encrypt(String message)
++ String decrypt(String message)
 }
 
 Platform *-- Server
@@ -29,6 +48,15 @@ Platform *-- Client
 Client *-- Message
 
 Server *-- Client
-Server *-- Message
+Server *-- Chatroom
+
+package util{
+class GUI
+class API
+class Encrypting
+database Database{
+}
+
+}
 
 @enduml
