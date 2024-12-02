@@ -37,11 +37,6 @@ class Message{
 - String location
 }
 
-class Encrypting{
-+ String encrypt(String message)
-+ String decrypt(String message)
-}
-
 Platform *-- Server
 Platform *-- Client
 
@@ -54,7 +49,9 @@ package util{
 class GUI
 class API
 class Encrypting
-database Database{
+class Encrypting{
++ String encrypt(String message)
++ String decrypt(String message)
 }
 
 }
