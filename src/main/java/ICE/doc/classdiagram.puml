@@ -8,6 +8,7 @@ class Platform{
 class Server{
 - String serverName
 - ArrayList<Client> clients
+- ArrayList<Chatroom> chatrooms
 }
 
 class Client{
@@ -37,22 +38,36 @@ class Message{
 - String location
 }
 
-Platform *-- Server
-Platform *-- Client
-
-Client *-- Message
-
-Server *-- Client
-Server *-- Chatroom
-
 package util{
 class GUI
 class API
-class Encrypting
 class Encrypting{
 + String encrypt(String message)
 + String decrypt(String message)
 }
+database "Database"{
 }
+
+Platform *-- Server
+Platform *-- Client
+Platform *-- GUI
+Platform --* "Database"
+
+Client *-- Message
+Client --* "Database"
+
+Server *-- Chatroom
+Server --* "Database"
+
+Chatroom *-- Message
+Chatroom *-- API
+Chatroom --* "Database"
+
+Message *-- Encrypting
+Message --* "Database"
+
+}
+
+
 
 @enduml
