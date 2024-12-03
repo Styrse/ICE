@@ -64,7 +64,6 @@ Chatroom *-- API
 Chatroom --* "Database"
 
 Message *-- Encrypting
-Message --* "Database"
 
 }
 
