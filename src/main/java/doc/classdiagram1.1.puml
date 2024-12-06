@@ -2,28 +2,108 @@
 'https://plantuml.com/class-diagram
 
 class Platform{
+- User currentUser
+- User averageUser
 -ArrayList<User> users
 }
 
 class Main
-class User
-interface CO2
-abstract Emission
+class User{
+- String username
+- String name
+- String password
+- String gender
+- String city
+- Co2 co2Counter
+- HashMap<Date, Co2> counterCalendar
+- Car myCar
+- double baseline
+}
 
-abstract Offset
-class PlantTree
-class RenewableEnergy
+abstract Co2{
+# double co2Gram
+- double calCo2()
+- void userEducation()
+}
 
-abstract class Transport{}
-class Car{}
-class Plane{}
-class Train{}
-class Bus{}
-class BikeWalk{}
+abstract Emission{
+# double co2Gram
 
-class Fabric{}
-class Clothes{}
+}
 
+abstract Offset{
+# double co2Gram
+}
+
+class PlantTree{
+# double co2Gram
+- int plantedTrees
++ boolean selfPlant(int trees)
++ boolean pay2Plant(int amount)
+}
+
+class RenewableEnergy{
+# double co2Gram
+- String energyType
++ double co2Saving()
+}
+
+interface PublicTransport{
++ double convertTimeToKm()
+}
+
+abstract class Transport{
+- String type
+- double co2PrKm
+# double co2Gram
+}
+
+class Car{
+- String type
+- String licensePlate
+- String fuelType
+- float kmPrLitre
+# double co2Gram
+}
+
+class Plane implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Train implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Bus implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class BikeWalk{
+- String type
+- double co2PrKm
+# double co2Gram
+}
+
+class Fabric{
+- String type
+- double co2Gram
+}
+
+class Clothes{
+- String type
+- double weight
++ double calCo2PrItem(Fabric fabricType)
+# double co2Gram
+}
 
 package "Util"{
 class FileIO{
@@ -31,9 +111,9 @@ class FileIO{
 +FileReaderCSV()
 +FileWriterDB()
 +FileWriterCSV()
+}
+}
 
-}
-}
 package "GUI"{
 class Controller
 }
@@ -48,11 +128,11 @@ Emission <|-- Clothes
 
 Clothes *-- Fabric
 
-User *-- Transport
+User *-- Car
+User *-- Co2
 
-CO2 *-- Platform
-CO2 *-- Emission
-CO2 *-- Offset
+Co2 *-- Emission
+Co2 *-- Offset
 
 Offset <|-- RenewableEnergy
 
