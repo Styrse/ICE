@@ -10,6 +10,7 @@ public class Platform {
     Clothes clothes;
     Transport transport;
     RenewableEnergy renewableEnergy;
+    Food food;
 
 
 
