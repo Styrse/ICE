@@ -2,6 +2,7 @@
 'https://plantuml.com/class-diagram
 
 class Platform{
+- String platformName
 - User currentUser
 - User averageUser
 -ArrayList<User> users
@@ -13,11 +14,19 @@ class User{
 - String name
 - String password
 - String gender
-- String city
+- Address address
 - Co2 co2Counter
 - HashMap<Date, Co2> counterCalendar
 - Car myCar
 - double baseline
+}
+
+class Address{
+- String street
+- String houseNumber
+- String postcode
+- String city
+- String country
 }
 
 abstract Co2{
@@ -100,7 +109,7 @@ class Fabric{
 
 class Clothes{
 - String type
-- double weight
+- int weight
 + double calCo2PrItem(Fabric fabricType)
 # double co2Gram
 }
@@ -130,6 +139,7 @@ Clothes *-- Fabric
 
 User *-- Car
 User *-- Co2
+User *-- Address
 
 Co2 *-- Emission
 Co2 *-- Offset
