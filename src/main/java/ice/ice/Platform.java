@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class Platform {
     private String platformName;
+    private GUI gui;
     User currentUser;
     User averageUser;
     ArrayList<User> users;
     Clothes clothes;
-    Transport transport;
-    RenewableEnergy renewableEnergy;
+    //Transport transport;
+    //RenewableEnergy renewableEnergy;
     Food food;
 
 
@@ -25,8 +26,8 @@ public class Platform {
 
     public void setup(){
         clothes.setupClothes();
-        transport.setupTransport();
-        renewableEnergy.setupRenewableEnergy();
+        //transport.setupTransport();
+        //renewableEnergy.setupRenewableEnergy();
     }
 
     public User getCurrentUser() {

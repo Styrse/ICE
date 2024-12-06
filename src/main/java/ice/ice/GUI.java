@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class GUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 414, 896);
         stage.setTitle("Hello!");
         stage.setScene(scene);
@@ -18,7 +18,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        //launch();
+        launch();
         Platform p1 = new Platform("Ecospire");
         p1.setup();
     }
