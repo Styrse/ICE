@@ -7,6 +7,9 @@ public class Platform {
     User currentUser;
     User averageUser;
     ArrayList<User> users;
+    Clothes clothes;
+    Transport transport;
+    RenewableEnergy renewableEnergy;
 
 
 
@@ -17,6 +20,12 @@ public class Platform {
 
     public String getPlatformName() {
         return platformName;
+    }
+
+    public void setup(){
+        clothes.setupClothes();
+        transport.setupTransport();
+        renewableEnergy.setupRenewableEnergy();
     }
 
     public User getCurrentUser() {
