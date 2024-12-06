@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Platform{
+-ArrayList<User> users
+}
+
+class Main
+class User
+interface CO2
+abstract Emission
+
+abstract Offset
+class PlantTree
+class RenewableEnergy
+
+abstract class Transport{}
+class Car{}
+class Plane{}
+class Train{}
+class Bus{}
+class BikeWalk{}
+
+class Fabric{}
+class Clothes{}
+
+
+package "Util"{
+class FileIO{
++FileReaderDB()
++FileReaderCSV()
++FileWriterDB()
++FileWriterCSV()
+
+}
+}
+package "GUI"{
+class Controller
+}
+
+Main*-- Platform
+
+Emission <|-- Transport
+
+Platform *-- User
+
+Emission <|-- Clothes
+
+Clothes *-- Fabric
+
+User *-- Transport
+
+CO2 *-- Platform
+CO2 *-- Emission
+CO2 *-- Offset
+
+Offset <|-- RenewableEnergy
+
+Offset <|-- PlantTree
+
+Transport <|-- Plane
+Transport <|-- BikeWalk
+Transport <|-- Bus
+Transport <|-- Car
+Transport <|-- Train
+
+
+
+@enduml

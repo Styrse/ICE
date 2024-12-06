@@ -1,0 +1,89 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Platform{
+-ArrayList<User> users
+}
+
+class Main
+class User
+interface CO2
+abstract Emission
+
+abstract Offset
+abstract PlantTree
+class PlantSelf
+class Pay2Plant
+class RenewableEnergy
+class Solar
+class Wind
+
+abstract class Transport{}
+abstract class Car{}
+class Plane{}
+class Train{}
+class Bus{}
+class Electric{}
+class Gasoline{}
+class Diesel{}
+class BikeWalk{}
+
+abstract class Fabric{}
+class Cotton{}
+class Bamboo{}
+abstract Cloth{}
+class Pants{}
+class TShirt{}
+class Hoodie{}
+class Shirt{}
+class Dress{}
+
+
+package "Util"{
+class FileIO{
++FileReaderDB()
++FileReaderCSV()
++FileWriterDB()
++FileWriterCSV()
+
+}
+}
+package "GUI"{
+class Controller
+}
+
+Main*-- Platform
+Emission <|-- Transport
+Platform *-- User
+Emission <|-- Fabric
+User <|-- Transport
+CO2 *-- Platform
+CO2 *-- Emission
+CO2 *-- Offset
+Offset <|-- RenewableEnergy
+RenewableEnergy <|-- Solar
+RenewableEnergy <|-- Wind
+Offset <|-- PlantTree
+PlantTree <|--PlantSelf
+PlantTree <|-- Pay2Plant
+Fabric <|-- Cloth
+Fabric <|-- Cotton
+Fabric <|-- Bamboo
+Cloth <|-- TShirt
+Cloth <|-- Dress
+Cloth <|-- Shirt
+Cloth <|-- Hoodie
+Cloth <|-- Pants
+Transport <|-- Plane
+Transport <|-- BikeWalk
+Transport <|-- Bus
+Transport <|-- Car
+Transport <|-- Train
+Car <|-- Diesel
+Car <|-- Gasoline
+Car <|-- Electric
+
+
+
+
+@enduml
