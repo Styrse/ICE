@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,10 +25,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <PasswordField id="usernameField" accessibleRole="TEXT_FIELD" layoutX="87.0" layoutY="173.0" onAction="#handleUsername" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
-      <PasswordField id="nameField" accessibleRole="TEXT_FIELD" layoutX="87.0" layoutY="252.0" onAction="#handleName" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
       <ChoiceBox id="genderBox" fx:id="genderChoiceBox" layoutX="87.0" layoutY="295.0" prefHeight="31.0" prefWidth="163.0" />
-      <PasswordField id="addressField" accessibleRole="TEXT_FIELD" layoutX="87.0" layoutY="375.0" onAction="#handleAddress" prefHeight="31.0" prefWidth="163.0" promptText="Enter address" />
       <ChoiceBox id="countryBox" fx:id="countryChoiceBox" layoutX="87.0" layoutY="420.0" prefHeight="31.0" prefWidth="163.0" />
       <DatePicker id="birthdayPicker" layoutX="87.0" layoutY="337.0" onAction="#handleBirthday" prefHeight="24.0" prefWidth="163.0" promptText="Pick birthday" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="94.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -35,5 +33,8 @@
             <Image url="@../../images/logo.png" />
          </image>
       </ImageView>
+      <TextField id="usernameField" layoutX="88.0" layoutY="174.0" onAction="#handleUsername" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
+      <TextField id="nameField" layoutX="88.0" layoutY="251.0" onAction="#handleName" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
+      <TextField id="addressField" layoutX="88.0" layoutY="374.0" onAction="#handleAddress" prefHeight="31.0" prefWidth="163.0" promptText="Enter address" />
    </children>
 </AnchorPane>
