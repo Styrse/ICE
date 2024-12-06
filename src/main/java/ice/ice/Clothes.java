@@ -23,7 +23,7 @@ public class Clothes {
     }
 
     public void loadFabrics(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/fabric.csv");
+        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/fabric.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
             fabrics.add(new Fabric(tempString[0], Double.parseDouble(tempString[1])));
@@ -31,7 +31,7 @@ public class Clothes {
     }
 
     public void loadClothes(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes.csv");
+        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/clothes.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
             clothes.add(new Clothes(tempString[0], Integer.parseInt(tempString[1])));
