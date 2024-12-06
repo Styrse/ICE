@@ -17,6 +17,16 @@ public class loginSceneController {
     }
 
     @FXML
+    void handlePassword(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleUsername(ActionEvent event) {
+
+    }
+
+    @FXML
     void handleMainMenuButton(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
         try {
@@ -28,15 +38,4 @@ public class loginSceneController {
             throw new RuntimeException(e);
         }
     }
-
-    @FXML
-    void handlePassword(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleUsername(ActionEvent event) {
-
-    }
-
 }
