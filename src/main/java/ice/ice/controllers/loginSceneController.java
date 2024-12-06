@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -12,18 +14,18 @@ import java.io.IOException;
 public class loginSceneController {
 
     @FXML
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
     void handleLogin(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
-    }
-
-    @FXML
-    void handlePassword(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleUsername(ActionEvent event) {
-
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
     }
 
     @FXML
@@ -35,7 +37,9 @@ public class loginSceneController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
+            //TODO Notify IT
         }
     }
 }

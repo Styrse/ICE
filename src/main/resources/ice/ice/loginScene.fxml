@@ -11,19 +11,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.loginSceneController">
    <children>
-      <Button id="loginButton" layoutX="58.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="51.0" prefWidth="220.0" text="Login">
+      <Button fx:id="loginButton" layoutX="58.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="51.0" prefWidth="220.0" text="Login">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <PasswordField id="passwordField" fx:id="passwordField" layoutX="86.0" layoutY="321.0" onAction="#handlePassword" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
+      <PasswordField fx:id="passwordField" layoutX="86.0" layoutY="321.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
       <Text layoutX="158.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Button id="mainMenuButton" layoutX="102.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleMainMenuButton" prefHeight="39.0" prefWidth="133.0" text="Main menu">
+      <Button fx:id="mainMenuButton" layoutX="102.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleMainMenuButton" prefHeight="39.0" prefWidth="133.0" text="Main menu">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TextField id="usernameField" fx:id="usernameField" layoutX="86.0" layoutY="269.0" onAction="#handleUsername" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
+      <TextField fx:id="usernameField" layoutX="86.0" layoutY="269.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/logo.png" />
