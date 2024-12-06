@@ -27,6 +27,7 @@ public class loginSceneController {
         System.out.println("Username: " + username);
         System.out.println("Password: " + password);
         //Check if username and password matches
+        //If match continue to mainMenuScene
     }
 
     @FXML
