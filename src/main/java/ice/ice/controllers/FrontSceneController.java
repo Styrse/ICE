@@ -28,7 +28,7 @@ public class FrontSceneController {
     void handleLogin(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("loginScene.fxml"));
         try {
-            Scene scene = new Scene(fxmlLoader.load(), 414, 896);
+            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
