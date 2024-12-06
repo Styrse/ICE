@@ -18,6 +18,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        //launch();
+        Platform p1 = new Platform("Ecospire");
+        p1.setup();
     }
 }
