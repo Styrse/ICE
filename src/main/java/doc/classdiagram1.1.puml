@@ -14,19 +14,11 @@ class User{
 - String name
 - String password
 - String gender
-- Address address
+- String address
 - Co2 co2Counter
 - HashMap<Date, Co2> counterCalendar
 - Car myCar
 - double baseline
-}
-
-class Address{
-- String street
-- String houseNumber
-- String postcode
-- String city
-- String country
 }
 
 abstract Co2{
@@ -139,7 +131,6 @@ Clothes *-- Fabric
 
 User *-- Car
 User *-- Co2
-User *-- Address
 
 Co2 *-- Emission
 Co2 *-- Offset
