@@ -34,19 +34,6 @@ public class createUserSceneController {
     }
 
     @FXML
-    void handleMainMenuButton(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
-        try {
-            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
     void handleName(ActionEvent event) {
 
     }
@@ -59,5 +46,18 @@ public class createUserSceneController {
     @FXML
     void handleUsername(ActionEvent event) {
 
+    }
+
+    @FXML
+    void handleMainMenuButton(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
