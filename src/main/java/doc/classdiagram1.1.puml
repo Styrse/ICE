@@ -100,7 +100,7 @@ class Fabric{
 
 class Clothes{
 - String type
-- double weight
+- int weight
 + double calCo2PrItem(Fabric fabricType)
 # double co2Gram
 }
