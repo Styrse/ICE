@@ -9,9 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GUI extends Application {
-    public static int height = 896;
-    public static int width = 414;
-
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -19,7 +16,7 @@ public class GUI extends Application {
         //p1.setup();
 
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
+        Scene scene = new Scene(fxmlLoader.load());
 
         stage.getIcons().add(new Image(getClass().getResource("/images/logo.png").toExternalForm()));
         stage.setResizable(false);
