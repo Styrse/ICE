@@ -94,4 +94,22 @@ public class User {
     public int getUserId() {
         return userId;
     }
+
+    public String saveUserInfo(){
+        return username + "; " +
+                name + "; " +
+                password + "; " +
+                gender + "; " +
+                birthday + "; " +
+                address + "; " +
+                userId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }

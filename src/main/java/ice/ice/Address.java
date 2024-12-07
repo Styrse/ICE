@@ -54,4 +54,23 @@ public class Address {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public String saveAddressInfo(){
+        return street + ": " +
+                houseNumber + ": " +
+                postcode + ": " +
+                city + ": " +
+                country;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

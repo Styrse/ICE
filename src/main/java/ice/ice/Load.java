@@ -27,12 +27,12 @@ public class Load {
         loadUsers();
 //        loadClothes();
 //        loadPublicTransportData();
-//        sout();
+        sout();
     }
 
     public void sout(){
-        for (Clothes c : clothes){
-            System.out.println(c);
+        for (User u : users){
+            System.out.println(u);
         }
     }
 
