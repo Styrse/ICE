@@ -8,8 +8,8 @@ public class Platform {
     private User averageUser;
     private ArrayList<User> users;
     private Clothes clothes;
-    private Transport transport;
-    private RenewableEnergy renewableEnergy;
+//    private Transport transport;
+//    private RenewableEnergy renewableEnergy;
     private Food food;
 
     public Platform(String platformName) {
