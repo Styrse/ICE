@@ -16,28 +16,8 @@ public class Clothes {
         this.weightGrams = weight;
     }
 
-    public void setupClothes(){
-        loadFabrics();
-        loadClothes();
-    }
-
     public double calCo2PrItem(Fabric fabricType){
         return fabricType.getCo2Gram() * weightGrams;
     }
 
-    public void loadFabrics(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/fabric.csv");
-        for (String data : temp){
-            String[] tempString = data.split(";");
-            fabrics.add(new Fabric(tempString[0], Double.parseDouble(tempString[1])));
-        }
-    }
-
-    public void loadClothes(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/clothes.csv");
-        for (String data : temp){
-            String[] tempString = data.split(";");
-            clothes.add(new Clothes(tempString[0], Integer.parseInt(tempString[1])));
-        }
-    }
 }

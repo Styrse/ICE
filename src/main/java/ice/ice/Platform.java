@@ -7,14 +7,19 @@ public class Platform {
     private User currentUser;
     private User averageUser;
     private ArrayList<User> users;
-    private Clothes clothes;
-//    private Transport transport;
-//    private RenewableEnergy renewableEnergy;
-    private Food food;
+    private ArrayList<Clothes> clothes;
+    private ArrayList<Transport> transports;
+    private ArrayList<RenewableEnergy> renewableEnergies;
+    private ArrayList<Food> foods;
+    private Load load;
 
     public Platform(String platformName) {
         this.platformName = platformName;
         this.users = new ArrayList<>();
+        this.clothes = new ArrayList<>();
+        this.transports = new ArrayList<>();
+        this.renewableEnergies = new ArrayList<>();
+        this.foods = new ArrayList<>();
     }
 
     public String getPlatformName() {
@@ -22,9 +27,6 @@ public class Platform {
     }
 
     public void setup(){
-        clothes.setupClothes();
-        //transport.setupTransport();
-        //renewableEnergy.setupRenewableEnergy();
     }
 
     public User getCurrentUser() {

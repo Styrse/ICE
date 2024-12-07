@@ -22,6 +22,7 @@ public class User {
         this.name = name;
         this.password = password;
         this.gender = gender;
+        this.birthday = birthday;
         this.address = address;
         this.userId = idCount++;
     }
