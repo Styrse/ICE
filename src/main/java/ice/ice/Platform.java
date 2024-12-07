@@ -9,7 +9,7 @@ public class Platform {
     private ArrayList<User> users;
     private ArrayList<Clothes> clothes;
     private ArrayList<Transport> transports;
-    private ArrayList<RenewableEnergy> renewableEnergies;
+    private ArrayList<RenewableEnergy> renewableEnergies;   //TODO load
     private ArrayList<Food> foods;
     private Load load;
 
@@ -27,6 +27,9 @@ public class Platform {
     }
 
     public void setup(){
+        load.loadUsers();
+        load.loadClothes();
+        load.loadPublicTransportData();
     }
 
     public User getCurrentUser() {
