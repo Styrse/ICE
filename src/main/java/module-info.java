@@ -5,4 +5,6 @@ module ice.ice {
 
     opens ice.ice to javafx.fxml;
     exports ice.ice;
+    exports ice.ice.controllers;
+    opens ice.ice.controllers to javafx.fxml;
 }

@@ -8,6 +8,7 @@ public class User {
     private String name;
     private String password;
     private String gender;
+    private Date birthday;
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
@@ -16,7 +17,7 @@ public class User {
     private int userId;
     private static int idCount = 1;
 
-    public User(String username, String name, String password, String gender, Address address) {
+    public User(String username, String name, String password, String gender, Date birthday, Address address) {
         this.username = username;
         this.name = name;
         this.password = password;
@@ -79,6 +80,14 @@ public class User {
 
     public void setBaseline(double baseline) {
         this.baseline = baseline;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public int getUserId() {

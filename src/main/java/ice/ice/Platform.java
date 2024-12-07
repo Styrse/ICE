@@ -12,8 +12,6 @@ public class Platform {
     private RenewableEnergy renewableEnergy;
     private Food food;
 
-
-
     public Platform(String platformName) {
         this.platformName = platformName;
         this.users = new ArrayList<>();
@@ -25,8 +23,8 @@ public class Platform {
 
     public void setup(){
         clothes.setupClothes();
-        transport.setupTransport();
-        renewableEnergy.setupRenewableEnergy();
+        //transport.setupTransport();
+        //renewableEnergy.setupRenewableEnergy();
     }
 
     public User getCurrentUser() {
