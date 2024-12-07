@@ -25,14 +25,14 @@ public class Load {
 
     public void loadSetup(){
         loadUsers();
-//        loadClothes();
+        loadClothes();
 //        loadPublicTransportData();
         sout();
     }
 
     public void sout(){
-        for (User u : users){
-            System.out.println(u);
+        for (Clothes c : clothes){
+            System.out.println(c);
         }
     }
 
@@ -83,10 +83,10 @@ public class Load {
     }
 
     public void loadClothes(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/clothes.csv");
+        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/clothes.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
-            clothes.add(new Clothes(tempString[0], Integer.parseInt(tempString[1])));
+            clothes.add(new Clothes(tempString[0].trim(), Integer.parseInt(tempString[1].trim())));
         }
     }
 }

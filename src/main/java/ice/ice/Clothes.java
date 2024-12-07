@@ -20,4 +20,13 @@ public class Clothes {
         return fabricType.getCo2Gram() * weightGrams;
     }
 
+    @Override
+    public String toString() {
+        return "Clothes{" +
+                "type='" + type + '\'' +
+                ", weightGrams=" + weightGrams +
+                ", fabrics=" + fabrics +
+                ", clothes=" + clothes +
+                '}';
+    }
 }
