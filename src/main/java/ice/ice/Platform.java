@@ -8,6 +8,7 @@ public class Platform {
     private User averageUser;
     private ArrayList<User> users;
     private ArrayList<Clothes> clothes;
+    private ArrayList<Fabric> fabrics;
     private ArrayList<Transport> transports;
     private ArrayList<RenewableEnergy> renewableEnergies;   //TODO load
     private ArrayList<Food> foods;
@@ -17,9 +18,11 @@ public class Platform {
         this.platformName = platformName;
         this.users = new ArrayList<>();
         this.clothes = new ArrayList<>();
+        this.fabrics = new ArrayList<>();
         this.transports = new ArrayList<>();
         this.renewableEnergies = new ArrayList<>();
         this.foods = new ArrayList<>();
+        this.load = new Load(users, clothes, fabrics, transports, renewableEnergies, foods);
     }
 
     public String getPlatformName() {
@@ -27,9 +30,7 @@ public class Platform {
     }
 
     public void setup(){
-        load.loadUsers();
-        load.loadClothes();
-        load.loadPublicTransportData();
+        load.loadSetup();
     }
 
     public User getCurrentUser() {

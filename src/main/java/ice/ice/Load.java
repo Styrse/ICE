@@ -23,6 +23,19 @@ public class Load {
         this.foods = foods;
     }
 
+    public void loadSetup(){
+        loadUsers();
+//        loadClothes();
+//        loadPublicTransportData();
+//        sout();
+    }
+
+    public void sout(){
+        for (Clothes c : clothes){
+            System.out.println(c);
+        }
+    }
+
     public void loadPublicTransportData()  {
         ArrayList<String> data = FileIO.fileReader("data/PublicTransport");
         for (String s : data)   {
@@ -45,7 +58,7 @@ public class Load {
             String password = tempString[2];
             String gender = tempString[3];
             String birthday = tempString[4];    //TODO parse to Date data type
-            String[] addressArray = tempString[5].split(";");
+            String[] addressArray = tempString[5].split(":");
             Address address = new Address(addressArray[0], addressArray[1], addressArray[2], addressArray[3], addressArray[4]);
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
