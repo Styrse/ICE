@@ -3,7 +3,7 @@ package ice.ice;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public abstract class Transport  {
+public class Transport  {
     private String VehicleType;
     private double averageSpeed;
     private double co2PrKm;
@@ -15,18 +15,6 @@ public abstract class Transport  {
         this.co2PrKm = co2PrKm;
     }
 
-    /*public void loadPublicTransportData()  {
-        ArrayList<Transport> public = new ArrayList<>();
-        ArrayList<String> data = FileIO.fileReader("data/PublicTransport");
-        for (String s : data)   {
-            String[] values = s.split(";");
-            public.add(new public(values[0],))
-        }
-    }*/
-
-    public void loadCarData()   {
-
-    }
 
     public double emissionPrMin()   {
         double kmPrMin = averageSpeed/60;
