@@ -22,6 +22,7 @@ public class User {
         this.name = name;
         this.password = password;
         this.gender = gender;
+        this.birthday = birthday;
         this.address = address;
         this.userId = idCount++;
     }
@@ -92,5 +93,23 @@ public class User {
 
     public int getUserId() {
         return userId;
+    }
+
+    public String saveUserInfo(){
+        return username + "; " +
+                name + "; " +
+                password + "; " +
+                gender + "; " +
+                birthday + "; " +
+                address + "; " +
+                userId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", userId=" + userId +
+                '}';
     }
 }

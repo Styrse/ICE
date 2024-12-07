@@ -13,7 +13,7 @@ public class GUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Platform p1 = new Platform("Ecospire");
-        //p1.setup();
+        p1.setup();
 
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

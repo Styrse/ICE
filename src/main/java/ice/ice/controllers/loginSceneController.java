@@ -31,7 +31,7 @@ public class loginSceneController {
         //TODO Login logic
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("mainMenuScene.fxml"));
         try {
-            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
+            Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
@@ -46,7 +46,7 @@ public class loginSceneController {
     void handleMainMenuButton(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
         try {
-            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
+            Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();

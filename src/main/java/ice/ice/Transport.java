@@ -1,16 +1,13 @@
 package ice.ice;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class Transport  {
-    private String VehicleType;
+    private String vehicleType;
     private double averageSpeed;
     private double co2PrKm;
 
 
     public Transport(String vehicleType, double averageSpeed, double co2PrKm) {
-        this.VehicleType = vehicleType;
+        this.vehicleType = vehicleType;
         this.averageSpeed = averageSpeed;
         this.co2PrKm = co2PrKm;
     }
@@ -21,5 +18,21 @@ public class Transport  {
         double result = kmPrMin * co2PrKm;
         return result;
     }
+
+    public String saveTransportInfo(){
+        return vehicleType + "; " +
+                averageSpeed + "; " +
+                co2PrKm;
+    }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "VehicleType='" + vehicleType + '\'' +
+                ", averageSpeed=" + averageSpeed +
+                ", co2PrKm=" + co2PrKm +
+                '}';
+    }
+
     //TODO data for public transport only tell you about overall co2 emission instead of pr person emission when taking public transport. Find more relevant data.
 }
