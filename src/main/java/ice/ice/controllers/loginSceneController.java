@@ -28,6 +28,18 @@ public class loginSceneController {
         System.out.println("Password: " + password);
         //Check if username and password matches
         //If match continue to mainMenuScene
+        //TODO Login logic
+        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("mainMenuScene.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load(), GUI.width, GUI.height);
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+            //TODO Notify IT
+        }
     }
 
     @FXML
