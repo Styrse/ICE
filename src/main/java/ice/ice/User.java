@@ -12,8 +12,10 @@ public class User {
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
-    //private Car car;
+    private Car myCar;
     private double baseline;
+    private int userId;
+    private static int idCount = 1;
 
     public User(String username, String name, String password, String gender, Date birthday, Address address) {
         this.username = username;
@@ -21,6 +23,7 @@ public class User {
         this.password = password;
         this.gender = gender;
         this.address = address;
+        this.userId = idCount++;
     }
 
     public String getUsername() {
@@ -85,5 +88,9 @@ public class User {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 }
