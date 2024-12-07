@@ -8,6 +8,9 @@ public class Clothes {
     private ArrayList<Fabric> fabrics;
     private ArrayList<Clothes> clothes;
 
+    public Clothes() {
+    }
+
     public Clothes(String type, int weight) {
         this.type = type;
         this.weightGrams = weight;
