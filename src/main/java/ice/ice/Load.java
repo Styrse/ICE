@@ -26,18 +26,12 @@ public class Load {
     public void loadSetup(){
         loadUsers();
         loadClothes();
-//        loadPublicTransportData();
-        sout();
-    }
-
-    public void sout(){
-        for (Clothes c : clothes){
-            System.out.println(c);
-        }
+        loadFabrics();
+        loadPublicTransportData();
     }
 
     public void loadPublicTransportData()  {
-        ArrayList<String> data = FileIO.fileReader("data/PublicTransport");
+        ArrayList<String> data = FileIO.fileReader("src/main/java/data/emission/PublicTransport");
         for (String s : data)   {
             String[] values = s.split(";");
             Transport tmpTransport = new Transport (values[0], (Double.parseDouble(values[1])), (Double.parseDouble(values[2])));
@@ -53,13 +47,13 @@ public class Load {
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/users.csv");
         for (String data : temp) {
             String[] tempString = data.split(";");
-            String username = tempString[0];
-            String name = tempString[1];
-            String password = tempString[2];
-            String gender = tempString[3];
-            String birthday = tempString[4];    //TODO parse to Date data type
+            String username = tempString[0].trim();
+            String name = tempString[1].trim();
+            String password = tempString[2].trim();
+            String gender = tempString[3].trim();
+            String birthday = tempString[4].trim();    //TODO parse to Date data type
             String[] addressArray = tempString[5].split(":");
-            Address address = new Address(addressArray[0], addressArray[1], addressArray[2], addressArray[3], addressArray[4]);
+            Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date birthdayFormatted;
@@ -75,10 +69,10 @@ public class Load {
     }
 
     public void loadFabrics(){
-        ArrayList<String> temp = FileIO.fileReader("data/emission/clothes/fabric.csv");
+        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/fabric.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
-            fabrics.add(new Fabric(tempString[0], Double.parseDouble(tempString[1])));
+            fabrics.add(new Fabric(tempString[0].trim(), Double.parseDouble(tempString[1].trim())));
         }
     }
 

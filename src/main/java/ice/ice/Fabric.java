@@ -24,4 +24,17 @@ public class Fabric {
     public void setCo2Gram(double co2Gram) {
         this.co2Gram = co2Gram;
     }
+
+    public String saveFabricInfo(){
+        return type + "; " +
+                co2Gram;
+    }
+
+    @Override
+    public String toString() {
+        return "Fabric{" +
+                "type='" + type + '\'' +
+                ", co2Gram=" + co2Gram +
+                '}';
+    }
 }

@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class Clothes {
     private String type;
     private int weightGrams;
-    private ArrayList<Fabric> fabrics;
-    private ArrayList<Clothes> clothes;
 
     public Clothes() {
     }
@@ -20,13 +18,16 @@ public class Clothes {
         return fabricType.getCo2Gram() * weightGrams;
     }
 
+    public String saveClothesInfo(){
+        return type + "; " +
+                weightGrams;
+    }
+
     @Override
     public String toString() {
         return "Clothes{" +
                 "type='" + type + '\'' +
                 ", weightGrams=" + weightGrams +
-                ", fabrics=" + fabrics +
-                ", clothes=" + clothes +
                 '}';
     }
 }
