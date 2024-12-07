@@ -15,9 +15,14 @@ public abstract class Transport  {
         this.co2PrKm = co2PrKm;
     }
 
-    public void loadPublicTransportData()  {
-
-    }
+    /*public void loadPublicTransportData()  {
+        ArrayList<Transport> public = new ArrayList<>();
+        ArrayList<String> data = FileIO.fileReader("data/PublicTransport");
+        for (String s : data)   {
+            String[] values = s.split(";");
+            public.add(new public(values[0],))
+        }
+    }*/
 
     public void loadCarData()   {
 
@@ -28,4 +33,5 @@ public abstract class Transport  {
         double result = kmPrMin * co2PrKm;
         return result;
     }
+    //TODO data for public transport only tell you about overall co2 emission instead of pr person emission when taking public transport. Find more relevant data.
 }
