@@ -1,0 +1,169 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Platform{
+- String platformName
+- User currentUser
+- User averageUser
+- ArrayList<User> users
+- Clothes clothes
+- Transport transport
+- RenewableEnergy renewableEnergy
+- Food food
++ Platform(String platformName)
+}
+
+class Main{
+
+}
+class User{
+- String username
+- String name
+- String password
+- String gender
+- String address
+- Co2 co2Counter
+- HashMap<Date, Co2> counterCalendar
+- Car myCar
+- double baseline
++ User(String username, String name, String password, String gender, Address address)
+}
+
+class Address{
+- String street
+- String houseNumber
+- String postcode
+- String city
+- String country
++ Address(String street, String houseNumber, String postcode, String city, String country)
+}
+
+abstract Co2{
+# double co2Gram
+- double calCo2()
+- void userEducation()
+}
+
+abstract Emission{
+}
+
+abstract Offset{
+}
+
+class PlantTree{
+# double co2Gram
+- int plantedTrees
++ boolean selfPlant(int trees)
++ boolean pay2Plant(int amount)
+}
+
+class RenewableEnergy{
+# double co2Gram
+- String energyType
++ double co2Saving()
+}
+
+interface PublicTransport{
++ double convertTimeToKm()
+}
+
+abstract class Transport{
+- String type
+- double co2PrKm
+# double co2Gram
+}
+
+class Car{
+- String type
+- String licensePlate
+- String fuelType
+- float kmPrLitre
+# double co2Gram
+}
+
+class Plane implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Train implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Bus implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class BikeWalk{
+- String type
+- double co2PrKm
+# double co2Gram
+}
+
+class Fabric{
+- String type
+- double co2Gram
++ Fabric(String type, double co2Gram)
+}
+
+class Clothes{
+- String type
+- int weightGrams
+- ArrayList<Fabric> fabrics
+- ArrayList<Clothes> clothes
++ Clothes(String type, int weight)
+}
+
+enum Food{
+Food(int co2GramsPrMeal)
+}
+
+package "Util"{
+class FileIO{
++ static ArrayList<String> FileReader(String path)
++ static FileWriter(ArrayList<String> data, String path)
+}
+}
+
+package "GUI"{
+class Controller
+}
+
+Main*-- Platform
+
+Emission <|-- Transport
+Emission <|-- Clothes
+Emission <|-- Food
+
+Platform *-- User
+
+Clothes *-- Fabric
+
+User *-- Car
+User *-- Co2
+User *-- Address
+
+Co2 *-- Emission
+Co2 *-- Offset
+
+Offset <|-- RenewableEnergy
+
+Offset <|-- PlantTree
+
+Transport <|-- Plane
+Transport <|-- BikeWalk
+Transport <|-- Bus
+Transport <|-- Car
+Transport <|-- Train
+
+
+
+@enduml
