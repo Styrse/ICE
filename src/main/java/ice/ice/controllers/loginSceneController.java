@@ -24,8 +24,6 @@ public class loginSceneController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
         //Check if username and password matches
         //If match continue to mainMenuScene
         //TODO Login logic
