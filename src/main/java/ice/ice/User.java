@@ -11,7 +11,7 @@ public class User {
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
-    private Car car;
+    private Car myCar;
     private double baseline;
 
     public User(String username, String name, String password, String gender, Address address) {

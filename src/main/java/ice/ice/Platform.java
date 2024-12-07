@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Platform {
     private String platformName;
-    User currentUser;
-    User averageUser;
-    ArrayList<User> users;
-    Clothes clothes;
-    Transport transport;
-    RenewableEnergy renewableEnergy;
-    Food food;
+    private User currentUser;
+    private User averageUser;
+    private ArrayList<User> users;
+    private Clothes clothes;
+    private Transport transport;
+    private RenewableEnergy renewableEnergy;
+    private Food food;
 
 
 
