@@ -1,0 +1,219 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Address{
+- String street
+- String houseNumber
+- String postcode
+- String city
+- String country
++ Address(String street, String houseNumber, String postcode, String city, String country)
++ String saveAddressInfo()
+}
+
+class Clothes{
+- String type
+- int weightGrams
++ Clothes(String type, int weight)
++ String saveClothesInfo()
+}
+
+abstract Co2{
+# double co2Gram
+- double calCo2()
+- void userEducation()
+}
+
+abstract Emission{
+- double co2Gram
++ Emission(double co2Gram)
+}
+
+class Fabric{
+- String type
+- double co2Gram
++ Fabric(String type, double co2Gram)
++ String saveFabricInfo()
+}
+
+package "Util"{
+class FileIO{
++ static ArrayList<String> FileReader(String path)
++ static FileWriter(ArrayList<String> data, String path)
+}
+}
+
+enum Food{
+Food(int co2GramsPrMeal)
+}
+
+class GUI{
++ void start(Stage stage)
++ void static main(String[] args)
+}
+
+class Issue{
+- int issueID
+- static int issueCount
+- User currentUser
+- Exception exception
++ Issue(User user, Exception exception)
+}
+
+class IT{
+- ArrayList<Issue> issues
++ IT()
++ void addIssue(Issue issue)
++ void removeIssue()
+}
+
+class Load{
+- ArrayList<User> users;
+- ArrayList<Clothes> clothes;
+- ArrayList<Fabric> fabrics;
+- ArrayList<Transport> transports;
+- ArrayList<RenewableEnergy> renewableEnergies;
+- ArrayList<Food> foods;
++ Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports, ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods)
++ void loadSetup()
++ void loadPublicTransport()
++ void loadCarData()
++ void loadUSers()
++ void loadFabrics()
++ void loadClothes()
+}
+
+abstract Offset{
+}
+
+class Platform{
+- String platformName
+- User currentUser
+- User averageUser
+- ArrayList<User> users
+- ArrayList<Clothes> clothes
+- ArrayList<Fabric> fabrics
+- ArrayList<Transport> transport
+- ArrayList<RenewableEnergy> renewableEnergy
+- ArrayList<Food> food
++ Platform(String platformName)
++ void setup()
+}
+
+class RenewableEnergy{
+}
+
+abstract class Transport{
+- String type
+- double co2PrKm
+- double co2Gram
++ Transport(String vehicleType, double averageSpeed, double co2PrKm)
++ double emissionPrMin()
++ String saveTransportInfo()
+}
+
+class User{
+- String username
+- String name
+- String password
+- String gender
+- Date birthday
+- String address
+- Co2 co2Counter
+- HashMap<Date, Co2> counterCalendar
+- Car myCar
+- double baseline
+- int userId
+- static int idCount = 1
++ User(String username, String name, String password, String gender, Date birthday, Address address)
++ String saveUserInfo()
+}
+
+
+class PlantTree{
+# double co2Gram
+- int plantedTrees
++ boolean selfPlant(int trees)
++ boolean pay2Plant(int amount)
+}
+
+interface PublicTransport{
++ double convertTimeToKm()
+}
+
+class Car{
+- String type
+- String licensePlate
+- String fuelType
+- float kmPrLitre
+# double co2Gram
+}
+
+class Plane implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Train implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class Bus implements PublicTransport{
+- String type
+- double co2PrKm
++ double convertTimeToKm()
+# double co2Gram
+}
+
+class BikeWalk{
+- String type
+- double co2PrKm
+# double co2Gram
+}
+
+GUI *-- Platform
+
+Emission <|-- Transport
+Emission <|-- Clothes
+Emission <|-- Food
+
+Platform *-- User
+Platform *-- Load
+Platform *-- IT
+
+IT *-- Issue
+
+User *-- Car
+User *-- Co2
+User *-- Address
+
+Clothes *-- Fabric
+
+Co2 *-- Emission
+Co2 *-- Offset
+
+Offset <|-- RenewableEnergy
+
+Offset <|-- PlantTree
+
+Transport <|-- Plane
+Transport <|-- BikeWalk
+Transport <|-- Bus
+Transport <|-- Car
+Transport <|-- Train
+
+GUI *-- "controllers"
+
+package "controllers"{
+class createUserSceneController
+class frontSceneController
+class loginSceneController
+class mainMenuSceneController
+}
+
+@enduml
