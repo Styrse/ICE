@@ -11,13 +11,21 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class loginSceneController {
+public class LoginSceneController {
 
     @FXML
     private TextField usernameField;
 
     @FXML
     private PasswordField passwordField;
+
+    public String getUsernameField() {
+        return String.valueOf(usernameField);
+    }
+
+    public String getPasswordField() {
+        return String.valueOf(passwordField);
+    }
 
     @FXML
     void handleLogin(ActionEvent event) {

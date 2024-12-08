@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class createUserSceneController {
+public class CreateUserSceneController {
 
     @FXML
     private ChoiceBox<?> countryChoiceBox;

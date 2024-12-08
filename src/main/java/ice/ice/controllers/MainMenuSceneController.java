@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class mainMenuSceneController {
+public class MainMenuSceneController {
 
     @FXML
     private Button co2Button;
