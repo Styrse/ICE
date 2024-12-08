@@ -183,11 +183,6 @@ Emission <|-- Clothes
 Emission <|-- Food
 
 Platform *-- User
-Platform *-- Clothes
-Platform *-- Fabric
-Platform *-- Transport
-Platform *-- RenewableEnergy
-Platform *-- Food
 Platform *-- Load
 Platform *-- IT
 
@@ -196,6 +191,8 @@ IT *-- Issue
 User *-- Car
 User *-- Co2
 User *-- Address
+
+Clothes *-- Fabric
 
 Co2 *-- Emission
 Co2 *-- Offset
