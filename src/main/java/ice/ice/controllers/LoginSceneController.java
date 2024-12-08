@@ -34,7 +34,7 @@ public class LoginSceneController {
 
         //Check if username and password matches
         //If match continue to mainMenuScene
-        //TODO Login logic
+        //TODO Login logic checker
         FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("mainMenuScene.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load());
