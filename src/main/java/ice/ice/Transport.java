@@ -12,6 +12,17 @@ public class Transport  {
         this.co2PrKm = co2PrKm;
     }
 
+    String getVehicleType() {
+        return this.vehicleType;
+    }
+
+    public double getAverageSpeed() {
+        return averageSpeed;
+    }
+
+    public double getCo2PrKm() {
+        return co2PrKm;
+    }
 
     public double emissionPrMin()   {
         double kmPrMin = averageSpeed/60;

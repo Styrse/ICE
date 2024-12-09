@@ -10,14 +10,16 @@ public class Load {
     private ArrayList<Clothes> clothes;
     private ArrayList<Fabric> fabrics;
     private ArrayList<Transport> transports;
+    private ArrayList<Car> cars;
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
-    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports, ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
+    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports, ArrayList<Car> cars, ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
         this.users = users;
         this.clothes = clothes;
         this.fabrics = fabrics;
         this.transports = transports;
+        this.cars = cars;
         this.renewableEnergies = renewableEnergies;
         this.foods = foods;
     }
@@ -39,7 +41,6 @@ public class Load {
     }
 
     public void loadCarData()   {
-
     }
 
     public void loadUsers(){
