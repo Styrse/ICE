@@ -8,7 +8,7 @@ public class Car {
     private String carBrand;
     private String fuelType;
     private float kmPrLitre;
-    static HashMap<String, Double> fuelCo2PrKm = new HashMap<>();
+    private static HashMap<String, Double> fuelCo2PrKm = new HashMap<>();
     private ArrayList<Car> cars;
     private User currentUser;
 
@@ -25,6 +25,7 @@ public class Car {
         return this.licensePlate;
     }
 
+
     public float getKmPrLitre() {
         return this.kmPrLitre;
     }
@@ -36,8 +37,9 @@ public class Car {
         fuelCo2PrKm.put("diesel", 0.0);
     }
 
-    public Double getFuelCo2PrKmCar()  {
-        return fuelCo2PrKm.get(this.fuelType); //Use this method when calculating total emission with cloth, publicTrans, etc
+    public Double fuelTypeToCo2PrKm()  {
+        //Use this method when calculating total emission with cloth, publicTrans, etc
+        return fuelCo2PrKm.get(this.fuelType);
     }
 
     public void saveCarDataToText()   {

@@ -17,11 +17,11 @@ public class Transport  {
     }
 
     public double getAverageSpeed() {
-        return averageSpeed;
+        return this.averageSpeed;
     }
 
     public double getCo2PrKm() {
-        return co2PrKm;
+        return this.co2PrKm;
     }
 
     public double emissionPrMin()   {
