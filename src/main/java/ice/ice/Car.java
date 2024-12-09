@@ -40,19 +40,19 @@ public class Car {
         return fuelCo2PrKm.get(this.fuelType); //Use this method when calculating total emission with cloth, publicTrans, etc
     }
 
-    /*public void saveCarDataToText()   {
+    public void saveCarDataToText()   {
         ArrayList<String> addCarArray = new ArrayList<>();
         for (Car c : cars) {
-            saveCarDataToText.add(c.toString());
+            addCarArray.add(c.toString());
         }
-        FileIO.fileWriter(saveCarDataToText, "data/emission/Cardata.csv");
-    }*/
+        FileIO.fileWriter(addCarArray, "data/emission/Cardata.csv");
+    }
 
     @Override
     public String toString() {
         return "UserCar{" +
                 "User:" + currentUser + + '\'' + //TODO Test if currentUser gives username or whole information in user class.
-                "LicensePlate='" + licensePlate +
+                ", LicensePlate='" + licensePlate +
                 ", Brand=" + carBrand +
                 ", FuelType=" + fuelType +
                 "kmPrLitre=" + kmPrLitre +
