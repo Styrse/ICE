@@ -1,5 +1,6 @@
 package ice.ice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Car {
@@ -8,6 +9,7 @@ public class Car {
     private String fuelType;
     private float kmPrLitre;
     static HashMap<String, Double> fuelCo2PrKm = new HashMap<>();
+    private ArrayList<Car> cars;
     private User currentUser;
 
     public Car(String licensePlate,String carBrand, String fuelType,float kmPrLitre) {
@@ -16,6 +18,7 @@ public class Car {
         this.fuelType = fuelType;
         this.kmPrLitre = kmPrLitre;
         this.currentUser = currentUser;
+        this.cars = cars;
     }
 
     public String getLicensePlate() {
@@ -26,7 +29,7 @@ public class Car {
         return this.kmPrLitre;
     }
 
-    //need data for co2 emission with different fuel types
+    //TODO need data for co2 emission with different fuel types
     public static void initialiseFuelCo2PrKm()  {
         fuelCo2PrKm.put("gasoline", 0.0);
         fuelCo2PrKm.put("electric", 0.0);
@@ -36,6 +39,14 @@ public class Car {
     public Double getFuelCo2PrKmCar()  {
         return fuelCo2PrKm.get(this.fuelType); //Use this method when calculating total emission with cloth, publicTrans, etc
     }
+
+    /*public void saveCarDataToText()   {
+        ArrayList<String> addCarArray = new ArrayList<>();
+        for (Car c : cars) {
+            saveCarDataToText.add(c.toString());
+        }
+        FileIO.fileWriter(saveCarDataToText, "data/emission/Cardata.csv");
+    }*/
 
     @Override
     public String toString() {
