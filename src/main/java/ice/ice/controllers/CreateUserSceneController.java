@@ -1,14 +1,10 @@
 package ice.ice.controllers;
 
-import ice.ice.GUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class CreateUserSceneController {
 
@@ -50,14 +46,8 @@ public class CreateUserSceneController {
 
     @FXML
     void handleMainMenuButton(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("frontScene.fxml"));
-        try {
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Scene scene = ControllersUtil.loadScene("frontScene.fxml");
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        ControllersUtil.setShowScene(stage, scene);
     }
 }
