@@ -6,6 +6,7 @@ import ice.ice.UserMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -17,6 +18,10 @@ public class LoginSceneController {
 
     @FXML
     private PasswordField passwordField;
+
+    @FXML
+    private Label invalidInput;
+
 
     @FXML
     void handleLogin(ActionEvent event) {
@@ -31,7 +36,7 @@ public class LoginSceneController {
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             ControllersUtil.setShowScene(stage, scene);
         } else {
-            //TODO Wrong username or password
+            invalidInput.setText("Username and password dosen't match");
         }
     }
 
