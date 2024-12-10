@@ -1,5 +1,6 @@
+
 VehicleType; averageSpeed; co2PrKm
-Plane;0;109;
+Plane;0;109
 TrainDiesel;86.8;48
 TrainEl;45.7;7
 Bus;0;0
