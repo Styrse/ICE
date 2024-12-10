@@ -36,26 +36,25 @@ public class LoginSceneController {
         String password = passwordField.getText();
 
         User user = UserMapper.login(username, password);
-
-        if (user == null) return;
-
         Platform.getInstance().setCurrentUser(user);
 
-        //Check if username and password matches
-        //If match continue to mainMenuScene
-        //TODO Login logic checker
-        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("mainMenuScene.fxml"));
-        try {
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-            //TODO Notify IT
+        if (user != null) {
+            FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("mainMenuScene.fxml"));
+            try {
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+                //TODO Notify IT
+            }
+        } else {
+            //TODO Wrong username or password
         }
     }
+
 
     @FXML
     void handleMainMenuButton(ActionEvent event) {
