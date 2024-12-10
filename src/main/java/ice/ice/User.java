@@ -12,7 +12,7 @@ public class User {
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
-//    private Car myCar;
+    private Car myCar;
     private double baseline;
     private int userId;
     private static int idCount = 1;
@@ -95,7 +95,14 @@ public class User {
         return userId;
     }
 
+    public Car getMyCar() {
+        return myCar;
+    }
 
+    public void setMyCar(Car myCar) {
+        this.myCar = myCar;
+        this.myCar.setCurrentUser(this);
+    }
 
     public String saveUserInfo(){
         return username + "; " +
