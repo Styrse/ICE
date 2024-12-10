@@ -12,14 +12,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.CreateUserSceneController">
    <children>
-      <TextField layoutX="88.0" layoutY="174.0" onAction="#handleUsername" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
-      <PasswordField layoutX="87.0" layoutY="213.0" onAction="#handlePassword" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
-      <TextField layoutX="88.0" layoutY="251.0" onAction="#handleName" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
+      <TextField fx:id="usernameTextField" layoutX="88.0" layoutY="174.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="87.0" layoutY="213.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
+      <TextField fx:id="nameTextField" layoutX="88.0" layoutY="251.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
       <ChoiceBox fx:id="genderChoiceBox" layoutX="87.0" layoutY="295.0" prefHeight="31.0" prefWidth="163.0" />
-      <DatePicker layoutX="87.0" layoutY="337.0" onAction="#handleBirthday" prefHeight="24.0" prefWidth="163.0" promptText="Pick birthday" />
-      <TextField layoutX="88.0" layoutY="374.0" onAction="#handleAddress" prefHeight="31.0" prefWidth="163.0" promptText="Enter address" />
+      <DatePicker fx:id="birthdayPicker" layoutX="87.0" layoutY="337.0" prefHeight="24.0" prefWidth="163.0" promptText="Pick birthday" />
+      <TextField fx:id="addressTextField" layoutX="88.0" layoutY="374.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter address" />
       <ChoiceBox fx:id="countryChoiceBox" layoutX="87.0" layoutY="420.0" prefHeight="31.0" prefWidth="163.0" />
-      <Button layoutX="58.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="51.0" prefWidth="220.0" text="Create">
+      <Button layoutX="58.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="51.0" prefWidth="220.0" text="Continue">
          <font>
             <Font size="24.0" />
          </font>
