@@ -36,7 +36,6 @@ public class LoginSceneController {
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             ControllersUtil.setShowScene(stage, scene);
         } else {
-            //TODO Wrong username or password
             invalidInput.setText("Username and password dosen't match");
         }
     }
