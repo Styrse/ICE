@@ -13,6 +13,7 @@ public class Platform {
     private ArrayList<RenewableEnergy> renewableEnergies;   //TODO load
     private ArrayList<Food> foods;
     private Load load;
+    private static Platform instance;
 
     public Platform(String platformName) {
         this.platformName = platformName;
@@ -23,6 +24,11 @@ public class Platform {
         this.renewableEnergies = new ArrayList<>();
         this.foods = new ArrayList<>();
         this.load = new Load(users, clothes, fabrics, transports, renewableEnergies, foods);
+        instance = this;
+    }
+
+    public static Platform getInstance(){
+        return instance;
     }
 
     public String getPlatformName() {
@@ -43,5 +49,9 @@ public class Platform {
 
     public void setPlatformName(String platformName) {
         this.platformName = platformName;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 }
