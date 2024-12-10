@@ -1,6 +1,9 @@
 package ice.ice.controllers;
 
 import ice.ice.GUI;
+import ice.ice.Platform;
+import ice.ice.User;
+import ice.ice.UserMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +34,12 @@ public class LoginSceneController {
     void handleLogin(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
+
+        User user = UserMapper.login(username, password);
+
+        if (user == null) return;
+
+        Platform.getInstance().setCurrentUser(user);
 
         //Check if username and password matches
         //If match continue to mainMenuScene
