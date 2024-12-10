@@ -14,7 +14,7 @@ public class Load {
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
-    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports, ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
+    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports/*, ArrayList<Car> cars*/,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
         this.users = users;
         this.clothes = clothes;
         this.fabrics = fabrics;
@@ -41,12 +41,12 @@ public class Load {
         }
     }
 
-    //TODO loadcardata value 0 should be username. it starts with licenseplate, talk with other group members to find  a solution.
+    //TODO loadcardata value 0 should be user.
     /*public void loadCarData()   {
         ArrayList<String> data = FileIO.fileReader("src/main/java/data/emission/Cardata");
                 for (String s : data)   {
                     String[] values = s.split(";");
-                    Car tmpCar = new Car (values[0].trim(), values[1].trim(), values[2].trim(), values[3].trim(), (Float.parseFloat(values[4].trim())));
+                    Car tmpCar = new Car (values[0], values[1].trim(), values[2].trim(), values[3].trim(),Float.parseFloat(values[4].trim()));
                     cars.add(tmpCar);
                 }
     }*/
