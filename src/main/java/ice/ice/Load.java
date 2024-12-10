@@ -10,6 +10,7 @@ public class Load {
     private ArrayList<Clothes> clothes;
     private ArrayList<Fabric> fabrics;
     private ArrayList<Transport> transports;
+    //private ArrayList<Car> cars;
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
@@ -18,6 +19,7 @@ public class Load {
         this.clothes = clothes;
         this.fabrics = fabrics;
         this.transports = transports;
+        //this.cars = cars;
         this.renewableEnergies = renewableEnergies;
         this.foods = foods;
     }
@@ -27,6 +29,7 @@ public class Load {
         loadClothes();
         loadFabrics();
         loadPublicTransportData();
+        //loadCarData();
     }
 
     public void loadPublicTransportData()  {
@@ -38,9 +41,15 @@ public class Load {
         }
     }
 
-    public void loadCarData()   {
-
-    }
+    //TODO loadcardata value 0 should be username. it starts with licenseplate, talk with other group members to find  a solution.
+    /*public void loadCarData()   {
+        ArrayList<String> data = FileIO.fileReader("src/main/java/data/emission/Cardata");
+                for (String s : data)   {
+                    String[] values = s.split(";");
+                    Car tmpCar = new Car (values[0].trim(), values[1].trim(), values[2].trim(), values[3].trim(), (Float.parseFloat(values[4].trim())));
+                    cars.add(tmpCar);
+                }
+    }*/
 
     public void loadUsers(){
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/users.csv");
