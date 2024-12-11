@@ -9,25 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.CreateUserSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.CarCreateSceneController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/logo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="num" layoutX="56.0" layoutY="207.0" promptText="Enter license plate">
+      <TextField fx:id="licensePlateTextField" layoutX="56.0" layoutY="207.0" promptText="Enter license plate">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="261.0" prefHeight="27.0" prefWidth="67.0" text="Or">
+      <Label alignment="CENTER" layoutX="62.0" layoutY="255.0" prefHeight="27.0" prefWidth="211.0" text="Or manually add car">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="num1" layoutX="56.0" layoutY="294.0" promptText="Enter km/l">
+      <TextField fx:id="kmPrLiterTextField" layoutX="56.0" layoutY="294.0" promptText="Enter km/l">
          <font>
             <Font size="18.0" />
          </font>
@@ -38,6 +37,11 @@
             <Font size="24.0" />
          </font>
       </Button>
+      <Label fx:id="invalidInput" alignment="CENTER" layoutX="41.0" layoutY="486.0" prefHeight="58.0" prefWidth="275.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <Button layoutX="102.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleGoBackButton" prefHeight="39.0" prefWidth="133.0" text="Go back">
          <font>
             <Font size="18.0" />

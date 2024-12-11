@@ -55,7 +55,7 @@ public class CreateUserSceneController {
         } else if (password.equals(confirmPassword)) {
             if (password.length() < 7){
                 invalidInput.setText("Password must be longer than 6 characters");
-            } else if (!password.matches("\\d.*")) {
+            } else if (!password.matches(".*[0-9].*")) {
                 invalidInput.setText("Password must contain a number");
             } else if (!password.matches(".*[A-Z].*")) {
                 invalidInput.setText("Password must contain a capital letter");
