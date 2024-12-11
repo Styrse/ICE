@@ -44,11 +44,18 @@ public class TransportSceneController {
         if (recurringTrips.isEmpty() || kmPrTrip.isEmpty()){
             invalidInput.setText("Fields cannot be empty");
         } else {
-            if (!recurringTrips.matches("\\d+") || !kmPrTrip.matches("\\d+")){
+            if (kmPrTrip.contains(",")){
+                for (int i = 0; i < kmPrTrip.length(); i++){
+                    if (kmPrTrip.charAt(i) == ','){
+                        kmPrTrip = kmPrTrip.replace(',', '.');
+                        System.out.println(kmPrTrip);
+                    }
+                }
+            } else if (!recurringTrips.matches("\\d+") || !kmPrTrip.matches("\\d+\\.?\\d*")){
                 invalidInput.setText("Please only enter numbers");
             } else {
                 int recurringTripsInt = Integer.parseInt(recurringTrips);
-                int kmPrTripInt = Integer.parseInt(kmPrTrip);
+                float kmPrTripInt = Float.parseFloat(kmPrTrip);
 
                 if (recurringTripsInt < 0 || kmPrTripInt < 0){
                     invalidInput.setText("Please enter a positive number");

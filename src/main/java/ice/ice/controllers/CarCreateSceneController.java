@@ -66,7 +66,7 @@ public class CarCreateSceneController {
 
     @FXML
     void handleGoBackButton(ActionEvent event) {
-        Scene scene = ControllersUtil.loadScene("addressScene.fxml");
+        Scene scene = ControllersUtil.loadScene("transportScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }
