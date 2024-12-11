@@ -13,14 +13,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.CreateUserSceneController">
    <children>
-      <TextField fx:id="usernameTextField" layoutX="87.0" layoutY="134.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
-      <PasswordField fx:id="passwordPasswordField" layoutX="86.0" layoutY="172.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
-      <PasswordField fx:id="confirmPasswordField" layoutX="88.0" layoutY="211.0" prefHeight="31.0" prefWidth="163.0" promptText="Confirm password" />
-      <TextField fx:id="nameTextField" layoutX="88.0" layoutY="250.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
-      <ChoiceBox fx:id="genderChoiceBox" layoutX="88.0" layoutY="294.0" prefHeight="31.0" prefWidth="163.0" />
-      <DatePicker fx:id="birthdayPicker" layoutX="88.0" layoutY="335.0" prefHeight="24.0" prefWidth="163.0" promptText="Pick birthday" />
-      <TextField fx:id="addressTextField" layoutX="88.0" layoutY="369.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter address" />
-      <ChoiceBox fx:id="countryChoiceBox" layoutX="87.0" layoutY="408.0" prefHeight="31.0" prefWidth="163.0" />
+      <TextField fx:id="usernameTextField" layoutX="86.0" layoutY="195.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter username" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="86.0" layoutY="243.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter password" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="86.0" layoutY="285.0" prefHeight="31.0" prefWidth="163.0" promptText="Confirm password" />
+      <TextField fx:id="nameTextField" layoutX="86.0" layoutY="321.0" prefHeight="31.0" prefWidth="163.0" promptText="Enter name" />
+      <ChoiceBox fx:id="genderChoiceBox" layoutX="86.0" layoutY="368.0" prefHeight="31.0" prefWidth="163.0" />
+      <DatePicker fx:id="birthdayPicker" layoutX="89.0" layoutY="415.0" prefHeight="24.0" prefWidth="163.0" promptText="Pick birthday" />
       <Button layoutX="60.0" layoutY="447.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="51.0" prefWidth="220.0" text="Continue">
          <font>
             <Font size="24.0" />
@@ -31,7 +29,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="95.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/logo.png" />
          </image>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.AddressSceneController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="streetTextField" layoutX="88.0" layoutY="173.0" prefHeight="31.0" prefWidth="163.0" promptText="Street" />
+      <TextField fx:id="houseNumberTextField" layoutX="88.0" layoutY="218.0" prefHeight="31.0" prefWidth="163.0" promptText="House number" />
+      <TextField fx:id="postcodeTextField" layoutX="89.0" layoutY="269.0" prefHeight="31.0" prefWidth="163.0" promptText="Postcode" />
+      <TextField fx:id="cityTextField" layoutX="87.0" layoutY="320.0" prefHeight="31.0" prefWidth="163.0" promptText="City" />
+      <ChoiceBox fx:id="countryChoiceBox" layoutX="89.0" layoutY="369.0" prefHeight="31.0" prefWidth="163.0" />
+      <Button layoutX="61.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="51.0" prefWidth="220.0" text="Continue">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="104.0" layoutY="536.0" mnemonicParsing="false" onAction="#handleMainMenuButton" prefHeight="39.0" prefWidth="133.0" text="Main menu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="invalidInput" alignment="CENTER" layoutX="34.0" layoutY="498.0" prefHeight="27.0" prefWidth="275.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
