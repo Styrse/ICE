@@ -103,13 +103,14 @@ class Platform{
 class RenewableEnergy{
 }
 
-abstract class Transport{
-- String type
+class Transport{
+- String vehicleType
+- double averageSpeed
 - double co2PrKm
-- double co2Gram
 + Transport(String vehicleType, double averageSpeed, double co2PrKm)
 + double emissionPrMin()
 + String saveTransportInfo()
++ String toString()
 }
 
 class User{
@@ -139,43 +140,24 @@ class PlantTree{
 
 
 class Car{
-- String type
 - String licensePlate
+- carBrand
 - String fuelType
 - float kmPrLitre
-# double co2Gram
-}
-
-class Plane implements PublicTransport{
-- String type
-- double co2PrKm
-+ double convertTimeToKm()
-# double co2Gram
-}
-
-class Train implements PublicTransport{
-- String type
-- double co2PrKm
-+ double convertTimeToKm()
-# double co2Gram
-}
-
-class Bus implements PublicTransport{
-- String type
-- double co2PrKm
-+ double convertTimeToKm()
-# double co2Gram
-}
-
-class BikeWalk{
-- String type
-- double co2PrKm
-# double co2Gram
+- HashMap<String, double> fuelCo2PrKm
+- ArrayList<Car> cars
+- User user
++ Car(String licensePlate,String carBrand, String fuelType,float kmPrLitre)
++ void initialiseFuelCo2PrKm()
++ Double fuelTypeToCo2PrLiter(String fuelType)
++ void saveCarDataToText()
++ void setCurrentUser(User currentUser)
++ String toString()
 }
 
 GUI *-- Platform
 
-Emission <|-- Transport
+
 Emission <|-- Clothes
 Emission <|-- Food
 
@@ -198,11 +180,8 @@ Offset <|-- RenewableEnergy
 
 Offset <|-- PlantTree
 
-Transport <|-- Plane
-Transport <|-- BikeWalk
-Transport <|-- Bus
 Transport <|-- Car
-Transport <|-- Train
+
 
 GUI *-- "controllers"
 
