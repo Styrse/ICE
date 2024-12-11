@@ -62,7 +62,7 @@ public class CreateUserSceneController {
 
     @FXML
     void handleMainMenuButton(ActionEvent event) {
-        Scene scene = ControllersUtil.loadScene("frontScene.fxml");
+        Scene scene = ControllersUtil.loadScene("createUserScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }

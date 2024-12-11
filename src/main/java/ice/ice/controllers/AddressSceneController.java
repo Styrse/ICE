@@ -45,15 +45,15 @@ public class AddressSceneController {
         if(street.isEmpty() || houseNumber.isEmpty() || postcode.isEmpty() || city.isEmpty() || country.isEmpty()){
             invalidInput.setText("Please fill out all the fields");
         } else {
-            Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
+            Scene scene = ControllersUtil.loadScene("transportScene.fxml");
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             ControllersUtil.setShowScene(stage, scene);
         }
     }
 
     @FXML
-    void handleMainMenuButton(ActionEvent event) {
-        Scene scene = ControllersUtil.loadScene("frontScene.fxml");
+    void handleGoBackButton(ActionEvent event) {
+        Scene scene = ControllersUtil.loadScene("createUserScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }
