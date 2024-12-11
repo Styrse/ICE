@@ -40,10 +40,14 @@ public class AddressSceneController {
         String houseNumber = houseNumberTextField.getText();
         String postcode = postcodeTextField.getText();
         String city = cityTextField.getText();
-        String country = String.valueOf(countryChoiceBox.getSelectionModel().getSelectedItem());
+        String country = countryChoiceBox.getValue();
 
         if(street.isEmpty() || houseNumber.isEmpty() || postcode.isEmpty() || city.isEmpty() || country.isEmpty()){
-            invalidInput.setText("Fields cannot be empty");
+            invalidInput.setText("Please fill out all the fields");
+        } else {
+            Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            ControllersUtil.setShowScene(stage, scene);
         }
     }
 
