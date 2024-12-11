@@ -52,17 +52,29 @@ public class CreateUserSceneController {
             invalidInput.setText("Name field cannot be empty");
         } else if (gender.isEmpty()) {
             invalidInput.setText("Choose a gender");
-        } else {
-            Scene scene = ControllersUtil.loadScene("addressScene.fxml");
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            ControllersUtil.setShowScene(stage, scene);
+        } else if (password.equals(confirmPassword)) {
+            if (password.length() < 7){
+                invalidInput.setText("Password must be longer than 6 characters");
+            } else if (!password.matches("\\d.*")) {
+                invalidInput.setText("Password must contain a number");
+            } else if (!password.matches(".*[A-Z].*")) {
+                invalidInput.setText("Password must contain a capital letter");
+            } else if (!password.matches(".*[a-z].*")) {
+                invalidInput.setText("Password must contain a small letter");
+            } else if (!password.matches(".*[^a-zA-Z0-9\\s].*")) {
+                invalidInput.setText("Password must contain a special character");
+            } else {
+                Scene scene = ControllersUtil.loadScene("addressScene.fxml");
+                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                ControllersUtil.setShowScene(stage, scene);
+            }
         }
         //TODO birthday to be realistic before creating new instance of User and continuing to next scene
     }
 
     @FXML
     void handleMainMenuButton(ActionEvent event) {
-        Scene scene = ControllersUtil.loadScene("createUserScene.fxml");
+        Scene scene = ControllersUtil.loadScene("frontScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }
