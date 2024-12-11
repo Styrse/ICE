@@ -56,9 +56,15 @@ public class TransportSceneController {
                     if (transportToggleGroup.getSelectedToggle() == null){
                         invalidInput.setText("Please select a type of transportation");
                     } else {
-                        Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
-                        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                        ControllersUtil.setShowScene(stage, scene);
+                        if (carRadioButton.isSelected()){
+                            Scene scene = ControllersUtil.loadScene("carCreationScene.fxml");
+                            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                            ControllersUtil.setShowScene(stage, scene);
+                        } else {
+                            Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
+                            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                            ControllersUtil.setShowScene(stage, scene);
+                        }
                     }
                 }
             }
