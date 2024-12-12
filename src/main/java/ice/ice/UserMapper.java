@@ -32,6 +32,17 @@ public class UserMapper {
                 return new User(username, name, password, gender, birthdayFormatted, address);
             }
         }
-        return user;
+        return null;
+    }
+
+    public static boolean checkDuplicateUsername(String username){
+        ArrayList<String> lines = FileIO.fileReader("src/main/java/data/users.csv");
+        for (String s : lines) {
+            String[] data = s.split(";");
+            if (data[0].trim().equalsIgnoreCase(username)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
