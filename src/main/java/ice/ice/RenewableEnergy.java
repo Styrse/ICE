@@ -18,10 +18,10 @@ public class RenewableEnergy extends Offset{
 
 
     //Below this line is the constructor
-    public RenewableEnergy() {
+    public RenewableEnergy(double co2Gram) {
+        super(co2Gram);
 
     }
-
 
 
 //RenewableEnergy methods are below this line

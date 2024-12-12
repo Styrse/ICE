@@ -9,7 +9,7 @@ public class PlantTree extends Offset{
 //Below this line are class attributes
 protected double co2Kilo;
 private int selfPlantedTrees;
-private int userPlantedTrees;
+private int totalUserPlantedTrees;
 private int paidPlantedTrees;
 
 
@@ -18,44 +18,29 @@ private static final double AVERAGE_TREE_OFFSET = 24.62;
 
 
 //Below this line is the constructor
-    public PlantTree() {
-
+    public PlantTree(double co2gram) {
+        super(co2gram);
     }
 
 
 
 //PlantTree methods are below this line
 
-    public double treesCarbonOffset(boolean iHavePlantedMyOwnTrees, boolean iHavePaidForTrees) {     //This method calculates total co2 offset for self planted AND paid for trees!
-        if (iHavePaidForTrees && iHavePlantedMyOwnTrees) {
-            if (selfPlantedTrees > 0) {
-                for (int i = 1; i <= selfPlantedTrees; i++) {        //first this loops runs
-                    co2Kilo += (AVERAGE_TREE_OFFSET * i);
-                }
-            }
-            if (paidPlantedTrees > 0) {
-                for (int i = 1; i <= paidPlantedTrees; i++) {       //then this loop runs
-                    co2Kilo += (AVERAGE_TREE_OFFSET * i);
-                }
-            }
-            return co2Kilo;
-        } else if (iHavePlantedMyOwnTrees && !iHavePaidForTrees) {
-            if (selfPlantedTrees > 0) {
-                for (int i = 1; i <= selfPlantedTrees; i++) {
-                    co2Kilo += (AVERAGE_TREE_OFFSET * i);
-                }
-                return co2Kilo;
-            }
-        } else if(!iHavePlantedMyOwnTrees && iHavePaidForTrees) {
-            if (paidPlantedTrees > 0) {
-                for (int i = 1; i <= paidPlantedTrees; i++) {
-                    co2Kilo += (AVERAGE_TREE_OFFSET * i);
-                }
-                return co2Kilo;
-            }
+    public double treesCarbonOffset(boolean iHavePlantedMyOwnTrees, boolean iHavePaidForTrees) {
+        if (iHavePaidForTrees && iHavePlantedMyOwnTrees && selfPlantedTrees > 0 && paidPlantedTrees > 0) {
+            co2Kilo = (AVERAGE_TREE_OFFSET * selfPlantedTrees);
+            co2Kilo += (AVERAGE_TREE_OFFSET * paidPlantedTrees);
+        } else if (iHavePlantedMyOwnTrees && !iHavePaidForTrees && selfPlantedTrees > 0) {
+            co2Kilo = (AVERAGE_TREE_OFFSET * selfPlantedTrees);
+        } else if(!iHavePlantedMyOwnTrees && iHavePaidForTrees && paidPlantedTrees > 0) {
+            co2Kilo = (AVERAGE_TREE_OFFSET * paidPlantedTrees);
+        } else {
+            System.out.println("You have neither planted or paid for the planting of any trees");
+            co2Kilo = 0;
         }
         return co2Kilo;
     }
+
 
     public int userInput(String messageToUser) {
         Scanner scanner = new Scanner(System.in);
@@ -66,9 +51,9 @@ private static final double AVERAGE_TREE_OFFSET = 24.62;
                 System.out.println(messageToUser);
                 treesPlantedThisTime += scanner.nextInt();
                 if (treesPlantedThisTime > 0) {
-                    userPlantedTrees += treesPlantedThisTime;
+                   totalUserPlantedTrees += treesPlantedThisTime;
                     System.out.println("You have planted: " + treesPlantedThisTime + " 🌳🌳🌳");
-                    System.out.println("Total trees you've planted so far: " + userPlantedTrees + " 🌳");
+                    System.out.println("Total trees you've planted so far: " + totalUserPlantedTrees + " 🌳");
                     validInput = true;
                 } else {
                     System.out.println("Please enter a positive number of 🌳🌳🌳");
@@ -85,7 +70,7 @@ private static final double AVERAGE_TREE_OFFSET = 24.62;
         int trees = userInput("How many  🌳🌳🌳 have you planted " + timeFrame + "?");
 
         if (trees > selfPlantedTrees) {
-            selfPlantedTrees += userPlantedTrees;
+            selfPlantedTrees += totalUserPlantedTrees;
             return true;
         } else {
             System.out.println("No trees were added to your count" + " " + timeFrame + ".");
