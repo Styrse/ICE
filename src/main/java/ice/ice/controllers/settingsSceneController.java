@@ -1,4 +1,6 @@
 package ice.ice.controllers;
+import ice.ice.User;
+import ice.ice.UserMapper;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -29,6 +31,19 @@ public class settingsSceneController {
             stage = (Stage) scenePane.getScene().getWindow();
             System.out.println("You succesfully logged out");
             stage.close();
+        }
+    }
+
+    public void deleteUser(ActionEvent event)  {
+        User currentUser;
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Account");
+        alert.setHeaderText("You are about to delete your account!");
+        alert.setContentText("Your account and all data which is associated with this account will be deleted." + "\nWill you proceed?");
+
+
+        if(alert.showAndWait().get() == ButtonType.OK)  {
+            UserMapper.deleteUser();
         }
     }
 
