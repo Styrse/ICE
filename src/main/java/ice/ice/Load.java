@@ -72,7 +72,8 @@ public class Load {
                 //TODO IT
             }
 
-            users.add(new User(username, name, password, gender, birthdayFormatted, address));
+            users.add(new User(username, name, password, gender, birthdayFormatted));
+            users.get(Integer.parseInt(data)).setAddress(address);
         }
     }
 

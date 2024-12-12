@@ -16,8 +16,10 @@ public class User {
     private double baseline;
     private int userId;
     private static int idCount = 1;
+    private int recurringTrips;
+    private
 
-    public User(String username, String name, String password, String gender, Date birthday, Address address) {
+    public User(String username, String name, String password, String gender, Date birthday) {
         this.username = username;
         this.name = name;
         this.password = password;
@@ -25,6 +27,8 @@ public class User {
         this.birthday = birthday;
         this.address = address;
         this.userId = idCount++;
+        Platform.getInstance().addUser(this);
+        Platform.getInstance().setCurrentUser(this);
     }
 
     public String getUsername() {

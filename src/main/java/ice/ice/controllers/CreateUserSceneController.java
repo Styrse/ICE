@@ -1,5 +1,6 @@
 package ice.ice.controllers;
 
+import ice.ice.User;
 import ice.ice.UserMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,6 +65,7 @@ public class CreateUserSceneController {
             } else if (!password.matches(".*[^a-zA-Z0-9\\s].*")) {
                 invalidInput.setText("Password must contain a special character");
             } else {
+                new User(username, name, password, gender, birthday);
                 Scene scene = ControllersUtil.loadScene("addressScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 ControllersUtil.setShowScene(stage, scene);
