@@ -1,7 +1,5 @@
 package ice.ice;
 
-import java.util.ArrayList;
-
 public class Clothes {
     private String type;
     private int weightGrams;
