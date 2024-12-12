@@ -1,6 +1,7 @@
 module ice.ice {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens ice.ice to javafx.fxml;
