@@ -1,6 +1,6 @@
 package ice.ice.controllers;
+import ice.ice.Platform;
 import ice.ice.User;
-import ice.ice.UserMapper;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 
 
-public class settingsSceneController {
+public class SettingsSceneController {
 
     @FXML
     private Button logoutButton;
@@ -43,7 +43,10 @@ public class settingsSceneController {
 
 
         if(alert.showAndWait().get() == ButtonType.OK)  {
-            UserMapper.deleteUser();
+            Platform.getInstance().deleteUser();
+            Platform.getInstance().close();
+            stage = (Stage) scenePane.getScene().getWindow();
+            stage.close();
         }
     }
 

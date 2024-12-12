@@ -45,14 +45,4 @@ public class UserMapper {
         }
         return false;
     }
-
-    /*public static void deleteUser ()  {
-        ArrayList<String> lines = FileIO.fileReader("src/main/java/data/users.csv");
-
-        try (users.contains(username))   {
-        users.remove(username);
-        } catch (Exception e) {
-            System.out.println("Error user not deleted");
-        }
-    }*/
 }

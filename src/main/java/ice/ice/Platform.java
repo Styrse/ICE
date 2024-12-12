@@ -14,6 +14,7 @@ public class Platform {
     private ArrayList<Food> foods;
     private Load load;
     private static Platform instance;
+    private Save save;
 
     public Platform(String platformName) {
         this.platformName = platformName;
@@ -25,9 +26,10 @@ public class Platform {
         this.foods = new ArrayList<>();
         this.load = new Load(users, clothes, fabrics, transports, renewableEnergies, foods);
         instance = this;
+        this.save = new Save();
     }
 
-    public static Platform getInstance(){
+    public static Platform getInstance() {
         return instance;
     }
 
@@ -35,12 +37,16 @@ public class Platform {
         return platformName;
     }
 
-    public void setup(){
+    public void setup() {
         load.loadSetup();
     }
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     public User getAverageUser() {
@@ -53,5 +59,17 @@ public class Platform {
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public void deleteUser() {
+        try {
+            getInstance().getUsers().remove(currentUser);
+        } catch (Exception e) {
+            System.out.println("Error user not deleted");
+        }
+    }
+
+    public void close() {
+        save.usersToText();
     }
 }
