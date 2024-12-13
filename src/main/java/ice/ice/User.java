@@ -141,7 +141,7 @@ public class User {
                 password + "; " +
                 gender + "; " +
                 birthday + "; " +
-                address + "; " +
+                address.saveAddressInfo() + "; " +
                 userId;
     }
 
