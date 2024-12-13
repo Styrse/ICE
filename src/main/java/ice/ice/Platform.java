@@ -31,12 +31,12 @@ public class Platform {
         return instance;
     }
 
-    public String getPlatformName() {
-        return platformName;
-    }
-
     public void setup(){
         load.loadSetup();
+    }
+
+    public String getPlatformName() {
+        return platformName;
     }
 
     public User getCurrentUser() {
