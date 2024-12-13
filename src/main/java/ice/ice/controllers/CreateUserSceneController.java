@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class CreateUserSceneController {
     public void initialize() {
         genderChoiceBox.getItems().addAll("Male", "Female", "Non-binary", "Transgender", "Other", "Prefer not to say");
@@ -42,7 +45,7 @@ public class CreateUserSceneController {
         String confirmPassword = confirmPasswordField.getText();
         String name = nameTextField.getText();
         String gender = genderChoiceBox.getValue();
-        String birthday = birthdayPicker.getId();
+        LocalDate birthday = birthdayPicker.getValue();
 
         if (UserMapper.checkDuplicateUsername(username)) {
             invalidInput.setText(username + " has already been taken");

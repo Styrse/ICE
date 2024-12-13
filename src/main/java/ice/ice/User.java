@@ -1,14 +1,16 @@
 package ice.ice;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class User {
     private String username;
     private String name;
     private String password;
     private String gender;
-    private Date birthday;
+    private LocalDate birthday;
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
@@ -19,7 +21,7 @@ public class User {
     private int recurringTrips;
     private float tripDistance;
 
-    public User(String username, String name, String password, String gender, Date birthday) {
+    public User(String username, String name, String password, String gender, LocalDate birthday) {
         this.username = username;
         this.name = name;
         this.password = password;
