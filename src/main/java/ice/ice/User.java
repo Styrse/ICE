@@ -32,6 +32,15 @@ public class User {
         Platform.getInstance().setCurrentUser(this);
     }
 
+    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.address = address;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -88,11 +97,11 @@ public class User {
         this.baseline = baseline;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

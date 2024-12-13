@@ -64,8 +64,7 @@ public class Load {
             String[] addressArray = tempString[5].split(":");
             Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
 
-            users.add(new User(username, name, password, gender, birthday));
-            users.get(Integer.parseInt(data)).setAddress(address);
+            users.add(new User(username, name, password, gender, birthday, address));
         }
     }
 
