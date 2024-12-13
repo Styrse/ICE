@@ -20,6 +20,7 @@ public class Car extends Emission {
         super( fuelType.getCo2GramsPrKm() * distance);
         // KmPrLitre / distance                                                                             = L
         // Co2GramsPrKm * distance                                                                          = Kg
+        // Distance                                                                                         = Km
 
         this.user = user;
         this.licensePlate = licensePlate;
@@ -27,7 +28,7 @@ public class Car extends Emission {
         this.co2PrLitre =fuelType.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
         this.kmPrLitre = kmPrLitre;//                                                                       = Km/L
         this.co2PrKm = fuelType.getCo2GramsPrKm();//                                                        = Kg/Km
-        this.distance = distance;//                                                                         = Km
+        this.distance = distance;
         this.cars = cars;
     }
 

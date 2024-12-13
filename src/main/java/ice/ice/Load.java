@@ -14,6 +14,11 @@ public class Load {
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
+
+    public Load() {
+        this.fabrics = loadFabricsAL();
+    }
+
     public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports/*, ArrayList<Car> cars*/,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
         this.users = users;
         this.clothes = clothes;
@@ -23,6 +28,8 @@ public class Load {
         this.renewableEnergies = renewableEnergies;
         this.foods = foods;
     }
+
+
 
     public void loadSetup(){
         loadUsers();
@@ -84,11 +91,40 @@ public class Load {
         }
     }
 
-    public void loadClothes(){
-        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/clothes.csv");
+    public ArrayList<Fabric> loadFabricsAL() {
+        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/fabric.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
-            clothes.add(new Clothes(tempString[0].trim(), Integer.parseInt(tempString[1].trim())));
+            fabrics.add(new Fabric(tempString[0].trim(), Double.parseDouble(tempString[1].trim())));
+        }
+        return fabrics;
+    }
+
+    public double getFabricCo2PrGram(ArrayList<Fabric> fabrics, int index){
+             Fabric currentFabric =   this.fabrics.get(index);
+             return currentFabric.getCo2PrGram();
+    }
+
+    public double getFabricCo2PrGram(String fabricName) {
+        double result = 0;
+
+        for (Fabric f : fabrics) {
+            if (f.getType().equals(fabricName)) {
+                result = f.getCo2PrGram();
+            }
+        }
+        return result;
+    }
+
+    public void loadClothes(){
+        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/clothes.csv");
+        int i = 0;
+        for (String data : temp){
+            String[] tempString = data.split(";");
+            clothes.add(new Clothes(
+                        new Fabric(tempString[0].trim(), getFabricCo2PrGram(fabrics, i)),
+                        Integer.parseInt(tempString[1].trim())));
+            i++;                                                                            // counts up index of fabric ArrayList
         }
     }
 }
