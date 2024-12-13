@@ -28,6 +28,8 @@ public class User {
         this.gender = gender;
         this.birthday = birthday;
         this.address = address;
+        this.userId = idCount++;
+        Platform.getInstance().addUser(this);
     }
 
     public User(String username, String name, String password, String gender, LocalDate birthday) {
