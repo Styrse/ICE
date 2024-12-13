@@ -1,5 +1,7 @@
 package ice.ice.controllers;
 
+import ice.ice.Car;
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -34,10 +36,15 @@ public class CarCreateSceneController {
         return kmPrLiterTextField.getText();
     }
 
+    public ChoiceBox<String> getFuelTypeChoiceBox() {
+        return fuelTypeChoiceBox;
+    }
+
     @FXML
     void handleCreate(ActionEvent event) {
         String licensePlate = getLicensePlateTextField();
         String kmPrLiter = getKmPrLiterTextField();
+        String fuelType = String.valueOf(getFuelTypeChoiceBox());
 
         if (licensePlate.isEmpty() && kmPrLiter.isEmpty()){
             invalidInput.setText("Please enter a license plate or manually add car");
@@ -46,6 +53,7 @@ public class CarCreateSceneController {
         } else if (!licensePlate.isEmpty() && kmPrLiter.isEmpty()) {
             if (!licensePlate.isEmpty()){
                 //TODO Check the if statement up against an API
+                Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), licensePlate));
                 Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 ControllersUtil.setShowScene(stage, scene);
@@ -56,6 +64,7 @@ public class CarCreateSceneController {
                 } else if (fuelTypeChoiceBox.getItems().isEmpty()) {
                     invalidInput.setText("Please select a fuel type");
                 } else {
+                    Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), fuelType, Float.parseFloat(kmPrLiter)));
                     Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                     ControllersUtil.setShowScene(stage, scene);

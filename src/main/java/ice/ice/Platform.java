@@ -37,8 +37,12 @@ public class Platform {
         return platformName;
     }
 
-    public void setup() {
+    public void setup(){
         load.loadSetup();
+    }
+
+    public String getPlatformName() {
+        return platformName;
     }
 
     public User getCurrentUser() {
@@ -71,5 +75,9 @@ public class Platform {
 
     public void close() {
         save.usersToText();
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }

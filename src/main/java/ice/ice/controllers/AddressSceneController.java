@@ -1,6 +1,7 @@
 package ice.ice.controllers;
 
-import ice.ice.UserMapper;
+import ice.ice.Address;
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -45,6 +46,7 @@ public class AddressSceneController {
         if(street.isEmpty() || houseNumber.isEmpty() || postcode.isEmpty() || city.isEmpty() || country.isEmpty()){
             invalidInput.setText("Please fill out all the fields");
         } else {
+            Platform.getInstance().getCurrentUser().setAddress(new Address(street, houseNumber, postcode, city, country));
             Scene scene = ControllersUtil.loadScene("transportScene.fxml");
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             ControllersUtil.setShowScene(stage, scene);
@@ -56,5 +58,6 @@ public class AddressSceneController {
         Scene scene = ControllersUtil.loadScene("createUserScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
+        //TODO Maybe add deleteUser when going back to not have unused users - Look at this for all go back buttons in Controllers
     }
 }

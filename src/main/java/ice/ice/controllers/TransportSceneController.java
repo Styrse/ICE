@@ -1,6 +1,6 @@
 package ice.ice.controllers;
 
-
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -48,7 +48,6 @@ public class TransportSceneController {
                 for (int i = 0; i < kmPrTrip.length(); i++){
                     if (kmPrTrip.charAt(i) == ','){
                         kmPrTrip = kmPrTrip.replace(',', '.');
-                        System.out.println(kmPrTrip);
                     }
                 }
             } else if (!recurringTrips.matches("\\d+") || !kmPrTrip.matches("\\d+\\.?\\d*")){
@@ -60,10 +59,14 @@ public class TransportSceneController {
                 if (recurringTripsInt < 0 || kmPrTripInt < 0){
                     invalidInput.setText("Please enter a positive number");
                 } else {
+                    Platform.getInstance().getCurrentUser().setRecurringTrips(recurringTripsInt);
+                    Platform.getInstance().getCurrentUser().setTripDistance(kmPrTripInt);
+
                     if (transportToggleGroup.getSelectedToggle() == null){
                         invalidInput.setText("Please select a type of transportation");
                     } else {
                         if (carRadioButton.isSelected()){
+                            //Todo Attributes to recurring trips for user
                             Scene scene = ControllersUtil.loadScene("carCreationScene.fxml");
                             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                             ControllersUtil.setShowScene(stage, scene);

@@ -1,5 +1,6 @@
 package ice.ice;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -8,7 +9,7 @@ public class User {
     private String name;
     private String password;
     private String gender;
-    private Date birthday;
+    private LocalDate birthday;
     private Address address;
     private Co2 co2Counter;
     private HashMap<Date, Co2> counterCalendar;
@@ -16,8 +17,21 @@ public class User {
     private double baseline;
     private int userId;
     private static int idCount = 1;
+    private int recurringTrips;
+    private float tripDistance;
 
-    public User(String username, String name, String password, String gender, Date birthday, Address address) {
+    public User(String username, String name, String password, String gender, LocalDate birthday) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.userId = idCount++;
+        Platform.getInstance().addUser(this);
+        Platform.getInstance().setCurrentUser(this);
+    }
+
+    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
         this.username = username;
         this.name = name;
         this.password = password;
@@ -25,6 +39,7 @@ public class User {
         this.birthday = birthday;
         this.address = address;
         this.userId = idCount++;
+        Platform.getInstance().addUser(this);
     }
 
     public String getUsername() {
@@ -83,11 +98,11 @@ public class User {
         this.baseline = baseline;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -102,6 +117,22 @@ public class User {
     public void setMyCar(Car myCar) {
         this.myCar = myCar;
         this.myCar.setCurrentUser(this);
+    }
+
+    public int getRecurringTrips() {
+        return recurringTrips;
+    }
+
+    public void setRecurringTrips(int recurringTrips) {
+        this.recurringTrips = recurringTrips;
+    }
+
+    public float getTripDistance() {
+        return tripDistance;
+    }
+
+    public void setTripDistance(float tripDistance) {
+        this.tripDistance = tripDistance;
     }
 
     public String saveUserInfo(){

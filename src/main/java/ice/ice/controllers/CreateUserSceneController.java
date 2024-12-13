@@ -1,11 +1,15 @@
 package ice.ice.controllers;
 
+import ice.ice.User;
 import ice.ice.UserMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CreateUserSceneController {
     public void initialize() {
@@ -41,7 +45,7 @@ public class CreateUserSceneController {
         String confirmPassword = confirmPasswordField.getText();
         String name = nameTextField.getText();
         String gender = genderChoiceBox.getValue();
-        String birthday = birthdayPicker.getId();
+        LocalDate birthday = birthdayPicker.getValue();
 
         if (UserMapper.checkDuplicateUsername(username)) {
             invalidInput.setText(username + " has already been taken");
@@ -64,6 +68,7 @@ public class CreateUserSceneController {
             } else if (!password.matches(".*[^a-zA-Z0-9\\s].*")) {
                 invalidInput.setText("Password must contain a special character");
             } else {
+                new User(username, name, password, gender, birthday);
                 Scene scene = ControllersUtil.loadScene("addressScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 ControllersUtil.setShowScene(stage, scene);

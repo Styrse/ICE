@@ -13,14 +13,17 @@ public class Car {
     private ArrayList<Car> cars;
     private User user;
 
-    public Car(User user, String licensePlate,String carBrand, String fuelType,float kmPrLitre) {
+    public Car(User user, String licensePlate) {
         this.user = user;
         this.licensePlate = licensePlate;
-        this.carBrand = carBrand;
+        this.co2PrKm = fuelTypeToCo2PrLiter(fuelType) / kmPrLitre;
+    }
+
+    public Car(User user, String fuelType, float kmPrLitre) {
+        this.user = user;
         this.fuelType = fuelType;
         this.kmPrLitre = kmPrLitre;
         this.co2PrKm = fuelTypeToCo2PrLiter(fuelType) / kmPrLitre;
-        this.cars = cars;
     }
 
     public String getLicensePlate() {
@@ -39,7 +42,7 @@ public class Car {
         fuelCo2PrKm.put("diesel", 2600.0);
     }
 
-    public Double fuelTypeToCo2PrLiter(String fuelType)  {
+    public double fuelTypeToCo2PrLiter(String fuelType)  {
         //Use this method when calculating total emission with cloth, publicTrans, etc
         return fuelCo2PrKm.get(this.fuelType);
     }
