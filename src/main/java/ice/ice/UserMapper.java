@@ -21,9 +21,7 @@ public class UserMapper {
                 String[] addressArray = userInfo[5].split(":");
                 Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
 
-                User user = new User(username, name, password, gender, birthday);
-                Platform.getInstance().getCurrentUser().setAddress(address);
-                return user;
+                return new User(username, name, password, gender, birthday, address);
             }
         }
         return null;
