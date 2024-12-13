@@ -32,6 +32,15 @@ public class User {
         Platform.getInstance().setCurrentUser(this);
     }
 
+    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.address = address;
+    }
+
     public String getUsername() {
         return username;
     }
