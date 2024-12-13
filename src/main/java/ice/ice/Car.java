@@ -42,7 +42,7 @@ public class Car {
         fuelCo2PrKm.put("diesel", 2600.0);
     }
 
-    public Double fuelTypeToCo2PrLiter(String fuelType)  {
+    public double fuelTypeToCo2PrLiter(String fuelType)  {
         //Use this method when calculating total emission with cloth, publicTrans, etc
         return fuelCo2PrKm.get(this.fuelType);
     }

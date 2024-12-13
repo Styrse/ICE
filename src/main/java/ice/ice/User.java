@@ -3,7 +3,6 @@ package ice.ice;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 
 public class User {
     private String username;
@@ -21,17 +20,6 @@ public class User {
     private int recurringTrips;
     private float tripDistance;
 
-    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
-        this.username = username;
-        this.name = name;
-        this.password = password;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.address = address;
-        this.userId = idCount++;
-        Platform.getInstance().addUser(this);
-    }
-
     public User(String username, String name, String password, String gender, LocalDate birthday) {
         this.username = username;
         this.name = name;
@@ -41,6 +29,17 @@ public class User {
         this.userId = idCount++;
         Platform.getInstance().addUser(this);
         Platform.getInstance().setCurrentUser(this);
+    }
+
+    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.address = address;
+        this.userId = idCount++;
+        Platform.getInstance().addUser(this);
     }
 
     public String getUsername() {
