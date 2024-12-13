@@ -1,4 +1,5 @@
 package ice.ice.controllers;
+
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -7,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-
 
 public class settingsSceneController {
 

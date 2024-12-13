@@ -54,4 +54,8 @@ public class Platform {
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
+
+    public void addUser(User user){
+        users.add(user);
+    }
 }
