@@ -1,5 +1,6 @@
 package ice.ice.controllers;
 
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -58,6 +59,9 @@ public class TransportSceneController {
                 if (recurringTripsInt < 0 || kmPrTripInt < 0){
                     invalidInput.setText("Please enter a positive number");
                 } else {
+                    Platform.getInstance().getCurrentUser().setRecurringTrips(recurringTripsInt);
+                    Platform.getInstance().getCurrentUser().setTripDistance(kmPrTripInt);
+
                     if (transportToggleGroup.getSelectedToggle() == null){
                         invalidInput.setText("Please select a type of transportation");
                     } else {

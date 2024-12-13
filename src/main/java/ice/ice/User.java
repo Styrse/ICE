@@ -17,7 +17,7 @@ public class User {
     private int userId;
     private static int idCount = 1;
     private int recurringTrips;
-    private
+    private float tripDistance;
 
     public User(String username, String name, String password, String gender, Date birthday) {
         this.username = username;
@@ -25,7 +25,6 @@ public class User {
         this.password = password;
         this.gender = gender;
         this.birthday = birthday;
-        this.address = address;
         this.userId = idCount++;
         Platform.getInstance().addUser(this);
         Platform.getInstance().setCurrentUser(this);
@@ -106,6 +105,22 @@ public class User {
     public void setMyCar(Car myCar) {
         this.myCar = myCar;
         this.myCar.setCurrentUser(this);
+    }
+
+    public int getRecurringTrips() {
+        return recurringTrips;
+    }
+
+    public void setRecurringTrips(int recurringTrips) {
+        this.recurringTrips = recurringTrips;
+    }
+
+    public float getTripDistance() {
+        return tripDistance;
+    }
+
+    public void setTripDistance(float tripDistance) {
+        this.tripDistance = tripDistance;
     }
 
     public String saveUserInfo(){
