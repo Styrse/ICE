@@ -1,6 +1,6 @@
 package ice.ice.controllers;
+
 import ice.ice.Platform;
-import ice.ice.User;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -9,8 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-
 
 public class SettingsSceneController {
 
@@ -35,7 +33,6 @@ public class SettingsSceneController {
     }
 
     public void deleteUser(ActionEvent event)  {
-        User currentUser;
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Account");
         alert.setHeaderText("You are about to delete your account!");
