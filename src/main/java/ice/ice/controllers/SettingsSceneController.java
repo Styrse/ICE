@@ -40,11 +40,15 @@ public class SettingsSceneController {
 
 
         if(alert.showAndWait().get() == ButtonType.OK)  {
+            stage = (Stage) scenePane.getScene().getWindow();
             Platform.getInstance().deleteUser();
             Platform.getInstance().close();
-            stage = (Stage) scenePane.getScene().getWindow();
             stage.close();
         }
+    }
+
+    public void showChangeName()    {
+
     }
 
     public void handleMainMenu(ActionEvent event)   {
