@@ -1,6 +1,7 @@
 package ice.ice;
 
 public class Clothes extends Emission {
+
     private String type;
     private int weightGrams;
     private Fabric fabricType;
