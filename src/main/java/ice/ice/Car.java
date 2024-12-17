@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Car {
+
     private String licensePlate;
     private String carBrand;
     private double fuelType;
@@ -22,6 +23,20 @@ public class Car {
                FuelType fuelTypeEnum,
                double kmPrLitre)
     {
+
+     /*
+    //Main constructor
+    public Car(User user,
+               String licensePlate,
+               String carBrand,
+               FuelType fuelType,
+               double kmPrLitre,
+               double distance) {
+
+        super(fuelType.getCo2GramsPrKm() * distance);
+        master
+        */
+
         // KmPrLitre / distance                                                                             = L
         // Co2GramsPrKm * distance                                                                          = Kg
         // Distance                                                                                         = Km
@@ -29,9 +44,12 @@ public class Car {
         this.user = user;
         this.licensePlate = licensePlate;
         this.carBrand = carBrand;
+       
+
         this.co2PrLitre =fuelTypeEnum.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
         this.kmPrLitre = kmPrLitre;//                                                                           = Km/L
         this.co2PrKm = fuelTypeEnum.getCo2GramsPrKm();//                                                        = Kg/Km
+
         this.distance = distance;
         this.cars = cars;
         this.fuelTypeEnum = fuelTypeEnum;
@@ -56,6 +74,25 @@ public class Car {
 
         this.co2PrKm = fuelType.co2GramsPrKm ;
     }
+
+/*
+    public Car(User user, String licensePlate) {
+        super();
+        this.user = user;
+        this.licensePlate = licensePlate;
+        this.co2PrKm = fuelTypeToCo2PrLiter(fuelType)/ kmPrLitre;
+    }
+
+
+
+    public Car(User user, FuelType fuelType, float kmPrLitre) {
+        super();
+        this.user = user;
+        this.kmPrLitre = kmPrLitre;
+        this.co2PrKm = fuelType.co2GramsPrKm ;
+    }
+ */
+
 
     public double getDistance() {
         return this.distance;
@@ -82,6 +119,7 @@ public class Car {
 
     FuelType getFuelType() {
         return this.fuelTypeEnum;
+
     }
 
     public void saveCarDataToText()   {
@@ -96,6 +134,8 @@ public class Car {
         this.user = currentUser;
     }
 
+
+
     @Override
     public String toString() {
         return "UserCar{" +
@@ -106,5 +146,6 @@ public class Car {
                 "kmPrLitre=" + kmPrLitre +
                 '}';
     }
+
 
 }

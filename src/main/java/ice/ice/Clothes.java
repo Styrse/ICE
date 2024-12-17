@@ -1,6 +1,7 @@
 package ice.ice;
 
 public class Clothes extends Emission {
+
     private String type;
     private int weightGrams;
     private Fabric fabricType;
@@ -12,6 +13,7 @@ public class Clothes extends Emission {
         this.weightGrams = weight;
         this.fabricType = fabricType;
     }
+
 
     public double calCo2PrItem(){
         return fabricType.getCo2PrGram() * weightGrams;

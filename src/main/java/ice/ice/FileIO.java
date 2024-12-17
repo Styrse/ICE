@@ -32,7 +32,7 @@ public class FileIO {
             for (String str : data) {
                 writer.write(str + "\n");
             }
-
+            writer.close();
         }catch(IOException e){
             System.out.println("Something went wrong writing to file");
         }

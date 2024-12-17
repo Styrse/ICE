@@ -1,9 +1,7 @@
 package ice.ice;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Load {
     private ArrayList<User> users;
@@ -66,20 +64,11 @@ public class Load {
             String name = tempString[1].trim();
             String password = tempString[2].trim();
             String gender = tempString[3].trim();
-            String birthday = tempString[4].trim();    //TODO parse to Date data type
+            LocalDate birthday = LocalDate.parse(tempString[4].trim());    //TODO parse to Date data type
             String[] addressArray = tempString[5].split(":");
             Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            Date birthdayFormatted;
-            try {
-                birthdayFormatted = formatter.parse(birthday);
-            } catch (ParseException e) {
-                throw new RuntimeException(e);
-                //TODO IT
-            }
-
-            users.add(new User(username, name, password, gender, birthdayFormatted, address));
+            users.add(new User(username, name, password, gender, birthday, address));
         }
     }
 
