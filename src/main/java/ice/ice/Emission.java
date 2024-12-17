@@ -9,12 +9,12 @@ public abstract class Emission extends Co2 {
     public Emission(double co2Gram) {
         super();
         this.co2Gram = co2Gram;
-    }   // end Constructor
+    }
 
     @Override
     public double getCo2Gram() {
         return this.co2Gram;
-    }   // getCo2Gram()
+    }
 
     private double calcEmissionsFromAL(ArrayList<Emission> emissions) {
         double result = 0;
@@ -38,16 +38,8 @@ public abstract class Emission extends Co2 {
         for (Food i : foods) {
             result += i.getCo2GramsPrMeal();
         }
-
         return result;
     }
-
-    public boolean calcTotalCarbonEmission(Emission co2Emission) {
-        boolean result = false;
-
-
-        return result;
-    }   // end addCo2Emission
 
     public boolean calcEmission() {
         double co2Prev = this.co2Gram;

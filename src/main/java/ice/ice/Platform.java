@@ -33,7 +33,6 @@ public class Platform {
         return instance;
     }
 
-
     public void setup(){
         load.loadSetup();
     }

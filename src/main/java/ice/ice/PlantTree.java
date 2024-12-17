@@ -6,25 +6,16 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PlantTree extends Offset{
-    //Below this line are class attributes
     protected double co2Kilo;
     private int selfPlantedTrees;
     private int totalUserPlantedTrees;
     private int paidPlantedTrees;
 
-
-    //Below this line are constants for calculations
     private static final double AVERAGE_TREE_OFFSET = 24.62;
 
-
-    //Below this line is the constructor
     public PlantTree(double co2gram) {
         super(co2gram);
     }
-
-
-
-//PlantTree methods are below this line
 
     public double treesCarbonOffset(boolean iHavePlantedMyOwnTrees, boolean iHavePaidForTrees) {
         if (iHavePaidForTrees && iHavePlantedMyOwnTrees && selfPlantedTrees > 0 && paidPlantedTrees > 0) {
@@ -40,7 +31,6 @@ public class PlantTree extends Offset{
         }
         return co2Kilo;
     }
-
 
     public int userInput(String messageToUser) {
         Scanner scanner = new Scanner(System.in);
@@ -78,7 +68,6 @@ public class PlantTree extends Offset{
         }
     }
 
-
     public void openLinkForTreeDonation(String url) {
         if (url == null || url.isBlank()) {
             url = "https://teamtrees.org/"; //Default to TeamTrees official donation page
@@ -90,14 +79,12 @@ public class PlantTree extends Offset{
                 Desktop.getDesktop().browse(new URI(url));    // Opens the provided URL in the default web browser
             } else {
                 System.out.println("Couldn't open the link, please visit " + url + " to make your donation!");     //Prints message if browsing is not supported
-
             }
         } catch (Exception e) {
             System.out.println("Couldn't open the link, please visit " + url);
             e.printStackTrace();
         }
     }
-
 
     public boolean pay2Plant(String timeFrame) {
         int trees = userInput("How many  🌳🌳🌳 do you want to sponsor " + timeFrame + "?");
@@ -110,5 +97,4 @@ public class PlantTree extends Offset{
             return false;
         }
     }
-
-} // end of PlantTree class
+}

@@ -5,7 +5,6 @@ public class Clothes extends Emission {
     private String type;
     private int weightGrams;
     private Fabric fabricType;
-    private Load load = new Load();
 
     public Clothes(Fabric fabricType, int weight) {
         super(weight * fabricType.getCo2PrGram());
@@ -13,7 +12,6 @@ public class Clothes extends Emission {
         this.weightGrams = weight;
         this.fabricType = fabricType;
     }
-
 
     public double calCo2PrItem(){
         return fabricType.getCo2PrGram() * weightGrams;
@@ -27,7 +25,6 @@ public class Clothes extends Emission {
     public Fabric getFabricType() {
         return fabricType;
     }
-
 
     @Override
     public String toString() {

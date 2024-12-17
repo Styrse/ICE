@@ -12,7 +12,6 @@ public class Load {
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
-
     public Load() {
         //this.fabrics = loadFabricsAL();
     }

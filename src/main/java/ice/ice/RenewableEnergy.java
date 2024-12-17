@@ -4,25 +4,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RenewableEnergy extends Offset{
-    //Below this line are class attributes
     protected double co2Kilo;
     private int totalRenewableEnergySources;
-    // String energyType; might be useful for later iterations
 
-    //Below this line are constants for calculations
     private static final double PANEL_WATTAGE = 300.0; // Typical residential solar panel rating ~300W (Source: NREL PV system benchmarks: https://www.nrel.gov/pv/)
     private static final double PEAK_SUN_HOURS_PER_DAY = 4.0; // Approximate average peak sun hours for parts of the Western Hemisphere (Source: NREL Resource Data: https://www.nrel.gov/gis/solar.html)
     private static int DAYS_PER_YEAR = 365; // Number of days in a year (General knowledge)
     private static final double GRID_EMISSION_FACTOR = 0.4; // Approximate CO2 kg/kWh for U.S. average grid (Source: U.S. EPA eGRID Data: https://www.epa.gov/egrid)
 
-
-    //Below this line is the constructor
     public RenewableEnergy(double co2Gram) {
         super(co2Gram);
     }
-
-
-//RenewableEnergy methods are below this line
 
     public double solarSavingsDefinedDate(TimePeriod timePeriod) {                   //Call this method
         System.out.println("Pick one of the options to see your CO₂ offset in different time intervals  \uD83E\uDD78");
@@ -46,9 +38,7 @@ public class RenewableEnergy extends Offset{
             default:
                 System.out.println("Displaying your CO₂ offset per year!");
                 return co2SolarSaving("year", 1);
-
         }
-
     }
 
     public double co2SolarSaving(String perDate, int one52Or12Or365 ) {  //insert 365 for per day, 52 for per week, 12 per month, 1 per year.
@@ -68,9 +58,7 @@ public class RenewableEnergy extends Offset{
 
         System.out.println("Your solar panels offset approximately " + (co2Kilo / (double) one52Or12Or365) + " kg of CO₂ per " + perDate + "!");
         return co2Kilo;
-
     }
-
 
     public int solarPanels() {
         return userInput("Please type in the number of solar panels you want to add your profile: ", "Solar cells");
@@ -99,8 +87,5 @@ public class RenewableEnergy extends Offset{
             }
         }
         return renewableEnergySources;
-
     }
-
-
-} //End of RenewableEnergy class
+}

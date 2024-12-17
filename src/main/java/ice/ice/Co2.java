@@ -50,10 +50,5 @@ public abstract class Co2 {
         }   // end offset for-each loop
 
         return emission-offset;
-    }   // end calcCo2()
-
-    private void userEducation(){
-
     }
-
 }
