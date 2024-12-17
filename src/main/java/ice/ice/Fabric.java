@@ -8,6 +8,11 @@ public class Fabric {
 
     public Fabric(String type) {
         this.type = type;
+        this.co2PrGram = 25.6;
+    }
+
+    public Fabric(String type, double co2PrGram) {
+        this.type = type;
         this.co2PrGram = co2PrGram;
     }
 
