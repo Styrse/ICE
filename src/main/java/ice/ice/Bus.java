@@ -1,8 +1,8 @@
 package ice.ice;
 
 public class Bus extends Transport{
-    public Bus(double averageSpeed, FuelType fuelType, double distance) {
-        super("Bus", averageSpeed, fuelType, distance);
+    public Bus(double averageSpeed, double distance) {
+        super("Bus", averageSpeed, FuelType.DIESEL, distance);
     }
 
 
