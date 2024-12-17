@@ -14,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.MainMenuSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.MainMenuSceneController">
    <children>
       <SplitPane dividerPositions="0.0903010033444816" layoutX="88.0" layoutY="164.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button fx:id="co2Button" layoutX="148.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCo2" text="Co2" />
+                  <Button fx:id="co2Button" layoutX="148.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCo2Menu" text="Co2" />
                   <Button fx:id="settingsButton" layoutX="260.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
                   <ImageView fitHeight="51.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +43,7 @@
                               </Text>
                               <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/smiley/Smiling%20Face%20Emoji.png" />
+                                    <Image url="@../../images/smiley/SmilingFaceEmoji.png" />
                                  </image>
                               </ImageView>
                            </children>

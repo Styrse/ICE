@@ -28,7 +28,7 @@ public class Transport extends Emission {
         return 0;
     }
 
-    String getVehicleType() {
+    public String getVehicleType() {
         return this.vehicleType;
     }
 
