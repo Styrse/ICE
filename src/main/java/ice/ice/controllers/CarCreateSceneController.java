@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class CarCreateSceneController {
     public void initialize(){
-        fuelTypeChoiceBox.getItems().addAll("Gasoline", "Diesel", "Electrical");
+        fuelTypeChoiceBox.getItems().addAll(FuelType.GASOLINE.getType(), FuelType.DIESEL.getType(),FuelType.ELECTRIC.getType());
         fuelTypeChoiceBox.setValue("Choose fuel type");
     }
 
