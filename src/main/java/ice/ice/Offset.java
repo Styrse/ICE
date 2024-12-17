@@ -2,21 +2,16 @@ package ice.ice;
 
 
 public abstract class Offset extends Co2{
-    //Below this line are class attributes
     protected double co2Gram;
     private PlantTree plantTree = new PlantTree(co2Gram);
     private RenewableEnergy renewableEnergy = new RenewableEnergy(co2Gram);
 
-    //Below this line are class constants
     final static double ONE_THOUSAND = 1000.00;
-
 
     public Offset(double co2Gram) {
         super();
         this.co2Gram = co2Gram;
     }
-
-    //Below this line are class methods
 
     public double calculateTotalTreeCarbonOffset(TimePeriod timePeriod) {
         switch (timePeriod) {
@@ -40,7 +35,6 @@ public abstract class Offset extends Co2{
         YEAR
     }
 
-
     public double calculateTotalCarbonOffset(TimePeriod timePeriod) {
         /*
         timePeriod int values
@@ -59,11 +53,4 @@ public abstract class Offset extends Co2{
         this.co2Gram += calculateTotalCarbonOffset(TimePeriod.YEAR);
         return this.co2Gram;
     }
-
-    public Offset getInstance() {
-        return this;
-    }
-
-
-
 }

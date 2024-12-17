@@ -1,10 +1,7 @@
 package ice.ice;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class UserMapper {
     public static User login(String enteredUsername, String enteredPassword){

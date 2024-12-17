@@ -7,7 +7,6 @@ public class Transport extends Emission {
     private final double distance;
     private double co2Gram;
 
-    // The intention is to make
     public Transport(String vehicleType, double averageSpeed,  FuelType fuelType, double travelDistance){
         super((fuelType.getCo2GramsPrKm()) * travelDistance);       //Calculates total co2Gram for every total distance
         this.distance = travelDistance;
@@ -19,10 +18,8 @@ public class Transport extends Emission {
     public double calcTotalCarbonEmission(){
         double result = 0;
         result += co2Gram;
-
         return result;
     }
-
 
     public double calc(){
         return 0;
@@ -52,7 +49,7 @@ public class Transport extends Emission {
 
     public double calcCo2(){
         return getCo2PrKm() * getDistance();
-    } // end calcCo2()
+    }
 
     public String saveTransportInfo(){
         return  vehicleType + "; " +

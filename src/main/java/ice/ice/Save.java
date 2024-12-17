@@ -1,6 +1,5 @@
 package ice.ice;
 
-import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class Save {

@@ -1,7 +1,5 @@
 package ice.ice;
 
-import java.util.ArrayList;
-
 public class Fabric {
     private String type;
     private double co2PrGram;
@@ -36,7 +34,6 @@ public class Fabric {
         return type + "; " +
                 co2PrGram;
     }
-
 
     public Fabric getFabric(){
         return this;
