@@ -14,9 +14,6 @@ public class Clothes extends Emission {
         this.fabricType = fabricType;
     }
 
-    public Clothes(String fabricName, int weight) {
-        super(weight * load.getFabricCo2PrGram(fabricName));
-    }
 
     public double calCo2PrItem(){
         return fabricType.getCo2PrGram() * weightGrams;
