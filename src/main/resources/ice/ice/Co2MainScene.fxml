@@ -15,7 +15,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button layoutX="262.0" layoutY="13.0" mnemonicParsing="false" text="Back &lt;-" />
+                  <Button fx:id="goBackButton" layoutX="262.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleMainMenu" text="Back &lt;-" />
                   <ImageView fitHeight="51.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/logo.png" />
@@ -35,7 +35,7 @@
                         <Image url="@../../images/TrainLogo.png" />
                      </image>
                   </ImageView>
-                  <ChoiceBox layoutX="55.0" layoutY="201.0" prefHeight="39.0" prefWidth="224.0" />
+                  <ChoiceBox fx:id="vehicleTypeChoice" layoutX="55.0" layoutY="201.0" prefHeight="39.0" prefWidth="224.0" />
                   <Button layoutX="57.0" layoutY="403.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="220.0" text="Continue">
                      <font>
                         <Font size="24.0" />

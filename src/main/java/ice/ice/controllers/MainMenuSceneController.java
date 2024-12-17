@@ -19,6 +19,12 @@ public class MainMenuSceneController {
 
     }
 
+    public void handleCo2Menu(ActionEvent event)   {
+        Scene scene = ControllersUtil.loadScene("Co2MainScene.fxml");
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        ControllersUtil.setShowScene(stage, scene);
+    }
+
     @FXML
     void handleSettings(ActionEvent event) {
         Scene scene = ControllersUtil.loadScene("settingsScene.fxml");
