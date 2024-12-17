@@ -54,7 +54,7 @@ public class CarCreateSceneController {
         } else if (!licensePlate.isEmpty() && kmPrLiter.isEmpty()) {
             if (!licensePlate.isEmpty()){
                 //TODO Check the if statement up against an API
-                //srry Styrbjørn efter implementeringen af den nye car class måtte vi bruge den hardcoded value som er i constructoren i car klassen
+                //srry Styrbjørn efter implementeringen af den nye car class måtte vi bruge den hardcoded value som er i constructoren i car klassen.
                 Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(),
                         licensePlate,
                         "Skoda",
