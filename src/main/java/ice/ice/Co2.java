@@ -41,12 +41,12 @@ public abstract class Co2 {
         double emission = 0;
         double offset = 0;
 
-        for (Emission i : emissionAL) {
-            emission += i.getCo2Gram();
+        for (Emission e : emissionAL) {
+            emission += e.getCo2Gram();
         }   // end emission for-each loop
 
-        for (Offset i : OffsetAL) {
-            offset += i.getCo2Gram();
+        for (Offset o : OffsetAL) {
+            offset += o.getCo2Gram();
         }   // end offset for-each loop
 
         return emission-offset;

@@ -3,8 +3,8 @@ package ice.ice;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Car extends Emission {
-    //Class attributes/fields
+public class Car {
+
     private String licensePlate;
     private String carBrand;
     private double fuelType;
@@ -15,6 +15,8 @@ public class Car extends Emission {
     private User user;
     private double distance;
     private double co2PrLitre;
+    private FuelType fuelTypeEnum ;
+
 
     //Main constructor
     public Car(User user,
@@ -25,6 +27,7 @@ public class Car extends Emission {
                double distance) {
 
         super(fuelType.getCo2GramsPrKm() * distance);
+        master
         // KmPrLitre / distance                                                                             = L
         // Co2GramsPrKm * distance                                                                          = Kg
         // Distance                                                                                         = Km
@@ -32,11 +35,32 @@ public class Car extends Emission {
         this.user = user;
         this.licensePlate = licensePlate;
         this.carBrand = carBrand;
-        this.co2PrLitre = fuelType.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
-        this.kmPrLitre = kmPrLitre;//                                                                       = Km/L
-        this.co2PrKm = fuelType.getCo2GramsPrKm();//                                                        = Kg/Km
+       
+
+        this.co2PrLitre =fuelTypeEnum.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
+        this.kmPrLitre = kmPrLitre;//                                                                           = Km/L
+        this.co2PrKm = fuelTypeEnum.getCo2GramsPrKm();//                                                        = Kg/Km
+
         this.distance = distance;
         this.cars = cars;
+        this.fuelTypeEnum = fuelTypeEnum;
+    }
+
+    public Car(User user, String licensePlate) {
+        super();
+        this.user = user;
+        this.licensePlate = licensePlate;
+        this.co2PrKm = fuelTypeToCo2PrLiter(fuelTypeEnum)/ kmPrLitre;
+    }
+
+
+
+    public Car(User user, FuelType fuelType, float kmPrLitre) {
+        super();
+        this.user = user;
+        this.kmPrLitre = kmPrLitre;
+
+        this.co2PrKm = fuelType.co2GramsPrKm ;
     }
 
 /*
@@ -62,9 +86,9 @@ public class Car extends Emission {
         return this.distance;
     }
 
-    public double calcFuelUsed(double distance){
-        double result = 0;
-        result = kmPrLitre / distance;
+    public long  calcFuelUsed(double distance){
+        long result = 0;
+        result = (1 / (long) kmPrLitre)*(long)distance;
         return result;
     }
 
@@ -72,21 +96,18 @@ public class Car extends Emission {
         return this.licensePlate;
     }
 
-
     public double getKmPrLitre() {
         return this.kmPrLitre;
     }
 
-    //TODO need data for co2 emission with different fuel types
-    public static void initialiseFuelCo2PrKm()  {
-        fuelCo2PrKm.put("gasoline", 2300.0);
-        fuelCo2PrKm.put("electric", 0.0);
-        fuelCo2PrKm.put("diesel", 2600.0);
+    public Double fuelTypeToCo2PrLiter(FuelType fuelType)  {
+        //Use this method when calculating total emission with cloth, publicTrans, etc
+        return fuelTypeEnum.getCo2GramsPrKm();
     }
 
-    public double fuelTypeToCo2PrLiter(String fuelType)  {
-        //Use this method when calculating total emission with cloth, publicTrans, etc
-        return fuelCo2PrKm.get(this.fuelType);
+    FuelType getFuelType() {
+        return this.fuelTypeEnum;
+
     }
 
     public void saveCarDataToText()   {
