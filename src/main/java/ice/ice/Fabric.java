@@ -2,11 +2,11 @@ package ice.ice;
 
 public class Fabric {
     private String type;
-    private double co2Gram;
+    private double co2PrGram;
 
-    public Fabric(String type, double co2Gram) {
+    public Fabric(String type, double co2PrGram) {
         this.type = type;
-        this.co2Gram = co2Gram;
+        this.co2PrGram = co2PrGram;
     }
 
     public String getType() {
@@ -17,24 +17,28 @@ public class Fabric {
         this.type = type;
     }
 
-    public double getCo2Gram() {
-        return co2Gram;
+    public double getCo2PrGram() {
+        return co2PrGram;
     }
 
-    public void setCo2Gram(double co2Gram) {
-        this.co2Gram = co2Gram;
+    public void setCo2PrGram(double co2PrGram) {
+        this.co2PrGram = co2PrGram;
     }
 
     public String saveFabricInfo(){
         return type + "; " +
-                co2Gram;
+                co2PrGram;
+    }
+
+    public Fabric getFabric(){
+        return new Fabric(this.type, this.co2PrGram);
     }
 
     @Override
     public String toString() {
         return "Fabric{" +
                 "type='" + type + '\'' +
-                ", co2Gram=" + co2Gram +
+                ", co2Gram=" + co2PrGram +
                 '}';
     }
 }

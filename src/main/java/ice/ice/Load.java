@@ -34,7 +34,7 @@ public class Load {
         ArrayList<String> data = FileIO.fileReader("src/main/java/data/emission/PublicTransport");
         for (String s : data)   {
             String[] values = s.split(";");
-            Transport tmpTransport = new Transport (values[0], (Double.parseDouble(values[1])), (Double.parseDouble(values[2])));
+            Transport tmpTransport = new Transport (values[0], (Double.parseDouble(values[1])), (FuelType.ELECTRIC), Double.parseDouble(values[3]));
             transports.add(tmpTransport);
         }
     }

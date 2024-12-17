@@ -1,6 +1,6 @@
 package ice.ice;
 
-public enum Food {
+public enum Food  {
     TIKKA_MASALA(3500),
     BURGER(4500),
     PIZZA(2250),
@@ -13,13 +13,13 @@ public enum Food {
     SUSHI(3000),
     PLANT_BASED_PATTY(1000);
 
-    final int co2GramsPrMeal;
+    final double co2GramsPrMeal;
 
-    Food(int co2GramsPrMeal){
+    Food(double co2GramsPrMeal){
         this.co2GramsPrMeal = co2GramsPrMeal;
     }
 
-    public int getCo2GramsPrMeal() {
+    public double getCo2GramsPrMeal() {
         return co2GramsPrMeal;
     }
 }
