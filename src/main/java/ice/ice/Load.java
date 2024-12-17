@@ -16,7 +16,7 @@ public class Load {
 
 
     public Load() {
-        this.fabrics = loadFabricsAL();
+        //this.fabrics = loadFabricsAL();
     }
 
     public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports/*, ArrayList<Car> cars*/,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
@@ -87,11 +87,11 @@ public class Load {
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/fabric.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
-            fabrics.add(new Fabric(tempString[0].trim(), Double.parseDouble(tempString[1].trim())));
+            fabrics.add(new Fabric(tempString[0].trim()));
         }
     }
-
-    public ArrayList<Fabric> loadFabricsAL() {
+/*
+    public ArrayList<Fabric> loadFabricsAL(String path) {
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/fabric.csv");
         for (String data : temp){
             String[] tempString = data.split(";");
@@ -99,6 +99,8 @@ public class Load {
         }
         return fabrics;
     }
+
+ */
 
     public double getFabricCo2PrGram(ArrayList<Fabric> fabrics, int index){
              Fabric currentFabric =   this.fabrics.get(index);
@@ -121,9 +123,7 @@ public class Load {
         int i = 0;
         for (String data : temp){
             String[] tempString = data.split(";");
-            clothes.add(new Clothes(
-                        new Fabric(tempString[0].trim(), getFabricCo2PrGram(fabrics, i)),
-                        Integer.parseInt(tempString[1].trim())));
+            clothes.add(new Clothes(new Fabric(tempString[0].trim()), Integer.parseInt(tempString[1].trim())));
             i++;                                                                            // counts up index of fabric ArrayList
         }
     }

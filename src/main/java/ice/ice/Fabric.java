@@ -6,7 +6,7 @@ public class Fabric {
     private String type;
     private double co2PrGram;
 
-    public Fabric(String type, double co2PrGram) {
+    public Fabric(String type) {
         this.type = type;
         this.co2PrGram = co2PrGram;
     }
@@ -34,7 +34,7 @@ public class Fabric {
 
 
     public Fabric getFabric(){
-        return new Fabric(this.type, this.co2PrGram);
+        return this;
     }
 
     @Override
