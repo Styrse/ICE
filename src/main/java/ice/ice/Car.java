@@ -43,12 +43,6 @@ public class Car {
         this.co2PrKm = fuelType.co2GramsPrKm ;
     }
 
-    public Car(User user, FuelType fuelType, float kmPrLitre) {
-        this.user = user;
-        this.kmPrLitre = kmPrLitre;
-        this.co2PrKm = fuelType.co2GramsPrKm ;
-    }
-
     public double getDistance() {
         return this.distance;
     }
