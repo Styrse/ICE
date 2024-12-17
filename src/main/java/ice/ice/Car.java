@@ -16,7 +16,11 @@ public class Car {
     private double co2PrLitre;
     private FuelType fuelTypeEnum ;
 
-    public Car(User user, String licensePlate,String carBrand, FuelType fuelTypeEnum, double kmPrLitre)
+    public Car(User user,
+               String licensePlate,
+               String carBrand,
+               FuelType fuelTypeEnum,
+               double kmPrLitre)
     {
         // KmPrLitre / distance                                                                             = L
         // Co2GramsPrKm * distance                                                                          = Kg
@@ -33,8 +37,9 @@ public class Car {
         this.fuelTypeEnum = fuelTypeEnum;
     }
 
-    public Car(User user, String licensePlate) {
-        super();
+    public Car(User user,
+               String licensePlate) {
+
         this.user = user;
         this.licensePlate = licensePlate;
         this.co2PrKm = fuelTypeToCo2PrLiter(fuelTypeEnum)/ kmPrLitre;
@@ -42,8 +47,10 @@ public class Car {
 
 
 
-    public Car(User user, FuelType fuelType, float kmPrLitre) {
-        super();
+    public Car(User user,
+               FuelType fuelType,
+               float kmPrLitre) {
+        
         this.user = user;
         this.kmPrLitre = kmPrLitre;
 
