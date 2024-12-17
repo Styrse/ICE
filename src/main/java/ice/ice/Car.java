@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Car extends Emission {
+    //Class attributes/fields
     private String licensePlate;
     private String carBrand;
     private double fuelType;
@@ -15,33 +16,46 @@ public class Car extends Emission {
     private double distance;
     private double co2PrLitre;
 
-    public Car(User user, String licensePlate,String carBrand, FuelType fuelType,double kmPrLitre, double distance)
-    {
-        super( fuelType.getCo2GramsPrKm() * distance);
+    //Main constructor
+    public Car(User user,
+               String licensePlate,
+               String carBrand,
+               FuelType fuelType,
+               double kmPrLitre,
+               double distance) {
+
+        super(fuelType.getCo2GramsPrKm() * distance);
         // KmPrLitre / distance                                                                             = L
         // Co2GramsPrKm * distance                                                                          = Kg
 
         this.user = user;
         this.licensePlate = licensePlate;
         this.carBrand = carBrand;
-        this.co2PrLitre =fuelType.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
+        this.co2PrLitre = fuelType.getCo2GramsPrKm() * kmPrLitre; //                                         = Kg/L
         this.kmPrLitre = kmPrLitre;//                                                                       = Km/L
         this.co2PrKm = fuelType.getCo2GramsPrKm();//                                                        = Kg/Km
         this.distance = distance;//                                                                         = Km
         this.cars = cars;
+    }
 
+/*
     public Car(User user, String licensePlate) {
+        super();
         this.user = user;
         this.licensePlate = licensePlate;
-        this.co2PrKm = fuelTypeToCo2PrLiter(fuelType) / kmPrLitre;
+        this.co2PrKm = fuelTypeToCo2PrLiter(fuelType)/ kmPrLitre;
     }
 
-    public Car(User user, String fuelType, float kmPrLitre) {
+
+
+    public Car(User user, FuelType fuelType, float kmPrLitre) {
+        super();
         this.user = user;
-        this.fuelType = fuelType;
         this.kmPrLitre = kmPrLitre;
-        this.co2PrKm = fuelTypeToCo2PrLiter(fuelType) / kmPrLitre;
+        this.co2PrKm = fuelType.co2GramsPrKm ;
     }
+ */
+
 
     public double getDistance() {
         return this.distance;
@@ -86,6 +100,8 @@ public class Car extends Emission {
         this.user = currentUser;
     }
 
+
+
     @Override
     public String toString() {
         return "UserCar{" +
@@ -96,5 +112,6 @@ public class Car extends Emission {
                 "kmPrLitre=" + kmPrLitre +
                 '}';
     }
+
 
 }

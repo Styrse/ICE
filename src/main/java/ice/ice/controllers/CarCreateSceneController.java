@@ -1,6 +1,7 @@
 package ice.ice.controllers;
 
 import ice.ice.Car;
+import ice.ice.FuelType;
 import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,7 +54,13 @@ public class CarCreateSceneController {
         } else if (!licensePlate.isEmpty() && kmPrLiter.isEmpty()) {
             if (!licensePlate.isEmpty()){
                 //TODO Check the if statement up against an API
-                Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), licensePlate));
+                //srry Styrbjørn efter implementeringen af den nye car class måtte vi bruge den hardcoded value som er i constructoren i car klassen
+                Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(),
+                        licensePlate,
+                        "Skoda",
+                        FuelType.GASOLINE,
+                        13.57,
+                        200));
                 Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 ControllersUtil.setShowScene(stage, scene);
@@ -64,7 +71,9 @@ public class CarCreateSceneController {
                 } else if (fuelTypeChoiceBox.getItems().isEmpty()) {
                     invalidInput.setText("Please select a fuel type");
                 } else {
-                    Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), fuelType, Float.parseFloat(kmPrLiter)));
+                    //srry Styrbjørn efter implementeringen af den nye car class måtte vi
+                    // bruge den hardcoded value i setMyCar.
+                    Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), "Insert License Plate", "Insert Car Brand", FuelType.ELECTRIC, 12, 100));
                     Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                     ControllersUtil.setShowScene(stage, scene);
