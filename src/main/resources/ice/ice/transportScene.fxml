@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.TransportSceneController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="89.0" layoutY="164.0" text="Daily transport">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="199.0" prefHeight="48.0" prefWidth="236.0" text="How often do you go to work/school a week" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="recurringTripsTextField" layoutX="93.0" layoutY="249.0" promptText="Weekly " />
+      <Label alignment="CENTER" layoutX="49.0" layoutY="275.0" prefHeight="25.0" prefWidth="236.0" text="How many km is it each way?" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="kmPrTripTextField" layoutX="92.0" layoutY="300.0" promptText="Km pr trip" />
+      <Label alignment="CENTER" layoutX="50.0" layoutY="335.0" prefHeight="25.0" prefWidth="236.0" text="Type of transportation" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="bikeWalkRadioButton" layoutX="71.0" layoutY="360.0" mnemonicParsing="false" text="Bike/walk">
+         <toggleGroup>
+            <ToggleGroup fx:id="transportToggleGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="busRadioButton" layoutX="205.0" layoutY="360.0" mnemonicParsing="false" text="Bus" toggleGroup="$transportToggleGroup" />
+      <RadioButton fx:id="trainRadioButton" layoutX="69.0" layoutY="392.0" mnemonicParsing="false" text="Train" toggleGroup="$transportToggleGroup" />
+      <RadioButton fx:id="carRadioButton" layoutX="206.0" layoutY="392.0" mnemonicParsing="false" text="Car" toggleGroup="$transportToggleGroup" />
+      <Button layoutX="58.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="51.0" prefWidth="220.0" text="Continue">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="invalidInput" alignment="CENTER" layoutX="31.0" layoutY="476.0" prefHeight="58.0" prefWidth="275.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="100.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleGoBackButton" prefHeight="39.0" prefWidth="133.0" text="Go back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
