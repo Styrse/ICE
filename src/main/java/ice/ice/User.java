@@ -151,6 +151,10 @@ public class User {
         return dailyCo2Usage;
     }
 
+    public void adjustCo2(double co2grams){
+        dailyCo2Usage += co2grams;
+    }
+
     public String saveUserInfo(){
         return username + "; " +
                 name + "; " +

@@ -1,13 +1,13 @@
 package ice.ice;
 
 public enum FuelType {
-    DIESEL  (2300.0, "Diesel"),
+    DIESEL(2300.0, "Diesel"),
     ELECTRIC(0.0, "Electric"),
     GASOLINE(2600.0, "Gasoline"),
-    JETFUEL (10000, "Jetfuel");
+    JETFUEL(10000, "Jetfuel");
 
-     double co2GramsPrKm;
-     String fuelType;
+    double co2GramsPrKm;
+    String fuelType;
 
     private FuelType(double co2GramsPrKm, String fuelType) {
         this.co2GramsPrKm = co2GramsPrKm;
@@ -20,7 +20,7 @@ public enum FuelType {
 
     public String getType() {
         return this.fuelType;
-        }
     }
+}
 
 
