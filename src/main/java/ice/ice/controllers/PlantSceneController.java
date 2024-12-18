@@ -8,6 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class PlantSceneController {
 
     @FXML
@@ -57,7 +62,13 @@ public class PlantSceneController {
 
     @FXML
     void handleTeamTreesHyperlink(ActionEvent event) {
-
+        try {
+            Desktop.getDesktop().browse(new URI("https://teamtrees.org/"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
