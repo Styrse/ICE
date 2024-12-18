@@ -1,5 +1,6 @@
 package ice.ice.controllers;
 
+import ice.ice.PlantTree;
 import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class PlantSceneController {
+    private static double averageTreeOffset = 24.62;
 
     @FXML
     private Label invalidInput;
@@ -53,6 +55,7 @@ public class PlantSceneController {
                     invalidInput.setText("Please enter a positive number");
                 } else {
                     Platform.getInstance().getCurrentUser().addPlantedTrees(selfPlantTreesInt + payToPlantTreesInt);
+                    Platform.getInstance().getCurrentUser().adjustCo2(- (selfPlantTreesInt + payToPlantTreesInt) * averageTreeOffset);
 
                     Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
