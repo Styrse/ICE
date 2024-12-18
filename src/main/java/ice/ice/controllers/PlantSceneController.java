@@ -71,4 +71,10 @@ public class PlantSceneController {
         }
     }
 
+    @FXML
+    void handleMainMenu(ActionEvent event) {
+        Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        ControllersUtil.setShowScene(stage, scene);
+    }
 }
