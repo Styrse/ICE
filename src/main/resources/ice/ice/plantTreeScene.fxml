@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.PlantSceneController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="93.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="39.0" layoutY="38.0" prefHeight="90.0" prefWidth="259.0" text="Enter how many trees you have planted" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="selfPlantedTreesTextField" layoutX="53.0" layoutY="134.0" prefHeight="25.0" prefWidth="231.0" promptText="Quantity">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="38.0" layoutY="179.0" prefHeight="33.0" prefWidth="259.0" text="Or" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="payToPlantTreesTextField" layoutX="53.0" layoutY="220.0" prefHeight="25.0" prefWidth="231.0" promptText="Amount USD">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="40.0" layoutY="267.0" prefHeight="33.0" prefWidth="259.0" text="Join the movement at" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="100.0" layoutY="300.0" onAction="#handleTeamTreesHyperlink" text="Team Trees" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Hyperlink>
+      <Button layoutX="113.0" layoutY="355.0" mnemonicParsing="false" onAction="#handlePlantButton" prefHeight="39.0" prefWidth="112.0" text="Plant">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="invalidInput" alignment="CENTER" layoutX="34.0" layoutY="406.0" prefHeight="58.0" prefWidth="275.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="96.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/logo.png" />
          </image>
