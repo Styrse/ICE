@@ -21,7 +21,7 @@ public class MainMenuSceneController {
 
     @FXML
     public void handleTransportButton(ActionEvent event) {
-        Scene scene = ControllersUtil.loadScene("co2MainScene.fxml");
+        Scene scene = ControllersUtil.loadScene("addTransportScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }

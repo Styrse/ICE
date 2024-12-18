@@ -3,13 +3,12 @@ package ice.ice.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class Co2MainController {
+public class AddTransportSceneController {
     public void initialize() {
         vehicleTypeChoice.getItems().addAll("Train", "Bus", "Car");
         vehicleTypeChoice.setValue("Choose transportation type");
@@ -23,9 +22,6 @@ public class Co2MainController {
 
     @FXML
     private ChoiceBox<String> vehicleTypeChoice;
-
-    @FXML
-    private Button goBackButton;
 
     public void handleMainMenu(ActionEvent event) {
         Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
