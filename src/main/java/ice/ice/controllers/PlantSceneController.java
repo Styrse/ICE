@@ -1,6 +1,5 @@
 package ice.ice.controllers;
 
-import ice.ice.PlantTree;
 import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
