@@ -7,7 +7,7 @@ public class Transport extends Emission {
     private final double distance;
     private double co2Gram;
 
-    public Transport(String vehicleType, double averageSpeed,  FuelType fuelType, double travelDistance){
+    public Transport(String vehicleType, double averageSpeed, FuelType fuelType, double travelDistance){
         super((fuelType.getCo2GramsPrKm()) * travelDistance);       //Calculates total co2Gram for every total distance
         this.distance = travelDistance;
         this.vehicleType = vehicleType;

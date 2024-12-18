@@ -1,5 +1,7 @@
 package ice.ice.controllers;
 
+import ice.ice.Plane;
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -41,6 +43,13 @@ public class AddTransportSceneController {
                 invalidInput.setText("Please only enter a whole number");
             } else {
                 int travelTimeMinInt = Integer.parseInt(travelTimeMin);
+                if (vehicleType.equals("Train")){
+                    Platform.getInstance().getCurrentUser().adjustCo2(travelTimeMinInt * 20.67);
+                } else if (vehicleType.equals("Bus")) {
+                    Platform.getInstance().getCurrentUser().adjustCo2(travelTimeMinInt * 221.43);
+                } else if (vehicleType.equals("Car")) {
+                    Platform.getInstance().getCurrentUser().adjustCo2(travelTimeMinInt * 138.6);
+                }
 
                 Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
