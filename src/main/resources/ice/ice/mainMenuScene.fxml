@@ -20,7 +20,8 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button fx:id="co2Button" layoutX="148.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCo2Menu" text="Co2" />
+                  <Button layoutX="77.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleTransportButton" text="Add transport" />
+                  <Button layoutX="192.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleTreeButton" text="Tree" />
                   <Button fx:id="settingsButton" layoutX="260.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
                   <ImageView fitHeight="51.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
