@@ -21,10 +21,6 @@ public class Transport extends Emission {
         return result;
     }
 
-    public double calc(){
-        return 0;
-    }
-
     public String getVehicleType() {
         return this.vehicleType;
     }

@@ -1,12 +1,17 @@
 package ice.ice.controllers;
 
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainMenuSceneController {
+    public void initialize() {
+        plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
+    }
 
     @FXML
     private Button co2Button;
@@ -15,9 +20,7 @@ public class MainMenuSceneController {
     private Button settingsButton;
 
     @FXML
-    void handleCo2(ActionEvent event) {
-
-    }
+    private Text plantedTreesLabel;
 
     @FXML
     public void handleTransportButton(ActionEvent event) {
