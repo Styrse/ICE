@@ -15,7 +15,7 @@ public class MainMenuSceneController {
     public void initialize() {
         plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
 
-        co2CounterLabel.setText(String.format("%.0f", User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) + " / " + String.format("%.0f", User.averageCo2EmissionPrYear/365) + "Co2 grams");
+        co2CounterLabel.setText(String.format("%.0f", User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) + " / " + String.format("%.0f", User.averageCo2EmissionPrYear/365));
 
         Image embarrassedSmiley = new Image("file:src/main/resources/images/smiley/embarrassed.png");
         Image worriedSmiley = new Image("file:src/main/resources/images/smiley/worried.png");

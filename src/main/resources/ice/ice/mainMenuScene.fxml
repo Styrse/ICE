@@ -43,6 +43,11 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
+                              <Label layoutX="130.0" layoutY="62.0" text="Co2 grams">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
