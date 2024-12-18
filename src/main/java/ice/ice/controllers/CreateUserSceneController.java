@@ -54,27 +54,28 @@ public class CreateUserSceneController {
             //TODO Strong password
         } else if (name.isEmpty()) {
             invalidInput.setText("Name field cannot be empty");
-        } else if (gender.isEmpty()) {
-            invalidInput.setText("Choose a gender");
-        } else if (password.equals(confirmPassword)) {
-            if (password.length() < 7){
-                invalidInput.setText("Password must be longer than 6 characters");
-            } else if (!password.matches(".*[0-9].*")) {
-                invalidInput.setText("Password must contain a number");
-            } else if (!password.matches(".*[A-Z].*")) {
-                invalidInput.setText("Password must contain a capital letter");
-            } else if (!password.matches(".*[a-z].*")) {
-                invalidInput.setText("Password must contain a small letter");
-            } else if (!password.matches(".*[^a-zA-Z0-9\\s].*")) {
-                invalidInput.setText("Password must contain a special character");
-            } else {
-                new User(username, name, password, gender, birthday);
-                Scene scene = ControllersUtil.loadScene("addressScene.fxml");
-                Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-                ControllersUtil.setShowScene(stage, scene);
+        } else if (gender.equals("Male") || gender.equals("Female") || gender.equals("Non-binary") || gender.equals("Transgender") || gender.equals("Other") || gender.equals("Prefer not to say")) {
+            if (password.equals(confirmPassword)) {
+                if (password.length() < 7) {
+                    invalidInput.setText("Password must be longer than 6 characters");
+                } else if (!password.matches(".*[0-9].*")) {
+                    invalidInput.setText("Password must contain a number");
+                } else if (!password.matches(".*[A-Z].*")) {
+                    invalidInput.setText("Password must contain a capital letter");
+                } else if (!password.matches(".*[a-z].*")) {
+                    invalidInput.setText("Password must contain a small letter");
+                } else if (!password.matches(".*[^a-zA-Z0-9\\s].*")) {
+                    invalidInput.setText("Password must contain a special character");
+                } else {
+                    new User(username, name, password, gender, birthday);
+                    Scene scene = ControllersUtil.loadScene("addressScene.fxml");
+                    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                    ControllersUtil.setShowScene(stage, scene);
+                }
             }
+        } else {
+            invalidInput.setText("Choose a gender");
         }
-        //TODO birthday to be realistic before creating new instance of User and continuing to next scene
     }
 
     @FXML
