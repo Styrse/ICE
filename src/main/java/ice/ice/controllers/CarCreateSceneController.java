@@ -53,13 +53,7 @@ public class CarCreateSceneController {
             invalidInput.setText("Please only add license plate or manually add car");
         } else if (!licensePlate.isEmpty() && kmPrLiter.isEmpty()) {
             if (!licensePlate.isEmpty()){
-                //srry Styrbjørn efter implementeringen af den nye car class måtte vi bruge den hardcoded value som er i constructoren i car klassen
-                Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(),
-                        licensePlate,
-                        "Skoda",
-                        FuelType.GASOLINE,
-                        13.57,
-                        200));
+                Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), licensePlate));
                 Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                 Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 ControllersUtil.setShowScene(stage, scene);
@@ -70,9 +64,7 @@ public class CarCreateSceneController {
                 } else if (fuelTypeChoiceBox.getItems().isEmpty()) {
                     invalidInput.setText("Please select a fuel type");
                 } else {
-                    //srry Styrbjørn efter implementeringen af den nye car class måtte vi
-                    // bruge den hardcoded value i setMyCar.
-                    Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), "Insert License Plate", "Insert Car Brand", FuelType.ELECTRIC, 12, 100));
+                    Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(), Double.parseDouble(fuelType), Float.parseFloat(kmPrLiter)));
                     Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                     ControllersUtil.setShowScene(stage, scene);

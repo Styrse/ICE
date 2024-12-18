@@ -37,10 +37,10 @@ public class Car {
     }
 
 
-    public Car(User user, FuelType fuelType, float kmPrLitre) {
+    public Car(User user, double fuelType, float kmPrLiter) {
         this.user = user;
-        this.kmPrLitre = kmPrLitre;
-        this.co2PrKm = fuelType.co2GramsPrKm ;
+        this.kmPrLitre = kmPrLiter;
+        this.co2PrKm = fuelType/kmPrLiter;
     }
 
     public double getDistance() {
