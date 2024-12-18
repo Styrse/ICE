@@ -26,7 +26,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="335.0">
                <children>
-                  <TextField layoutX="55.0" layoutY="279.0" prefHeight="39.0" prefWidth="224.0" promptText="Enter travel time (min)">
+                  <TextField fx:id="travelTimeMinTextField" layoutX="55.0" layoutY="279.0" prefHeight="39.0" prefWidth="224.0" promptText="Enter travel time (min)">
                      <font>
                         <Font size="18.0" />
                      </font>
