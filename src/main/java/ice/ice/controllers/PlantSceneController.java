@@ -1,6 +1,5 @@
 package ice.ice.controllers;
 
-import ice.ice.PlantTree;
 import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class PlantSceneController {
-    private static double averageTreeOffset = 24.62;
+    private double averageTreeOffset = 24.62;
 
     @FXML
     private Label invalidInput;
