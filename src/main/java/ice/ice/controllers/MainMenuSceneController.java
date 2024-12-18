@@ -6,17 +6,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainMenuSceneController {
     public void initialize() {
-        plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
+        updatePlantedTrees();
+        updateSmiley();
+        updateProgressBar();
+    }
 
+    private void updateProgressBar(){
         co2CounterLabel.setText(String.format("%.0f", User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) + " / " + String.format("%.0f", User.averageCo2EmissionPrYear/365));
+        double co2Daily = User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage();
+        double progressCo2Bar = co2Daily / (User.averageCo2EmissionPrYear/365);
+        co2ProgressBar.setProgress(progressCo2Bar);
+    }
 
-        Image embarrassedSmiley = new Image("file:src/main/resources/images/smiley/embarrassed.png");
+    private void updatePlantedTrees(){
+        plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
+    }
+
+    private void updateSmiley(){Image embarrassedSmiley = new Image("file:src/main/resources/images/smiley/embarrassed.png");
         Image worriedSmiley = new Image("file:src/main/resources/images/smiley/worried.png");
         Image angrySmiley = new Image("file:src/main/resources/images/smiley/angry.png");
         if (User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage() < User.co2Goal2030){
@@ -27,6 +40,9 @@ public class MainMenuSceneController {
             smileyImage.setImage(angrySmiley);
         }
     }
+
+    @FXML
+    private ProgressBar co2ProgressBar;
 
     @FXML
     private ImageView smileyImage;
