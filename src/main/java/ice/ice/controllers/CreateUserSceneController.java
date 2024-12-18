@@ -72,9 +72,9 @@ public class CreateUserSceneController {
                     Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                     ControllersUtil.setShowScene(stage, scene);
                 }
-            } else {
-                invalidInput.setText("Choose a gender");
             }
+        } else {
+            invalidInput.setText("Choose a gender");
         }
     }
 
