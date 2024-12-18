@@ -17,8 +17,9 @@ public class UserMapper {
                 LocalDate birthday = LocalDate.parse(userInfo[4].trim());
                 String[] addressArray = userInfo[5].split(":");
                 Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
+                int plantedTrees = Integer.parseInt(userInfo[6].trim());
 
-                return new User(username, name, password, gender, birthday, address);
+                return new User(username, name, password, gender, birthday, address, plantedTrees);
             }
         }
         return null;

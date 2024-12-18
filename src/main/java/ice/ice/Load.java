@@ -47,8 +47,9 @@ public class Load {
             LocalDate birthday = LocalDate.parse(tempString[4].trim());
             String[] addressArray = tempString[5].split(":");
             Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
+            int plantedTrees = Integer.parseInt(tempString[6].trim());
 
-            users.add(new User(username, name, password, gender, birthday, address));
+            users.add(new User(username, name, password, gender, birthday, address, plantedTrees));
         }
     }
 

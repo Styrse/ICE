@@ -1,5 +1,7 @@
 package ice.ice.controllers;
 
+import ice.ice.PlantTree;
+import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -51,6 +53,8 @@ public class PlantSceneController {
                 if (selfPlantTreesInt < 0 || payToPlantTreesInt < 0){
                     invalidInput.setText("Please enter a positive number");
                 } else {
+                    Platform.getInstance().getCurrentUser().addPlantedTrees(selfPlantTreesInt + payToPlantTreesInt);
+
                     Scene scene = ControllersUtil.loadScene("mainMenuScene.fxml");
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     ControllersUtil.setShowScene(stage, scene);

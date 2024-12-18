@@ -1,8 +1,6 @@
 package ice.ice;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.HashMap;
 
 public class User {
     private String username;
@@ -18,6 +16,7 @@ public class User {
     private static int idCount = 1;
     private int recurringTrips;
     private float tripDistance;
+    private int plantedTrees;
 
     public User(String username, String name, String password, String gender, LocalDate birthday) {
         this.username = username;
@@ -30,13 +29,14 @@ public class User {
         Platform.getInstance().setCurrentUser(this);
     }
 
-    public User(String username, String name, String password, String gender, LocalDate birthday, Address address) {
+    public User(String username, String name, String password, String gender, LocalDate birthday, Address address, int plantedTrees) {
         this.username = username;
         this.name = name;
         this.password = password;
         this.gender = gender;
         this.birthday = birthday;
         this.address = address;
+        this.plantedTrees = plantedTrees;
         this.userId = idCount++;
         Platform.getInstance().addUser(this);
     }
@@ -134,6 +134,14 @@ public class User {
         this.tripDistance = tripDistance;
     }
 
+    public int getPlantedTrees() {
+        return plantedTrees;
+    }
+
+    public void addPlantedTrees(int amount){
+        plantedTrees += amount;
+    }
+
     public String saveUserInfo(){
         return username + "; " +
                 name + "; " +
@@ -141,7 +149,7 @@ public class User {
                 gender + "; " +
                 birthday + "; " +
                 address.saveAddressInfo() + "; " +
-                userId;
+                plantedTrees;
     }
 
     @Override

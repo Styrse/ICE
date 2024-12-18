@@ -1,7 +1,5 @@
 package ice.ice;
 
-import java.awt.Desktop;
-import java.net.URI;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -54,47 +52,5 @@ public class PlantTree extends Offset{
             }
         }
         return treesPlantedThisTime;
-    }
-
-    public boolean selfPlant(String timeFrame) {
-        int trees = userInput("How many  🌳🌳🌳 have you planted " + timeFrame + "?");
-
-        if (trees > selfPlantedTrees) {
-            selfPlantedTrees += totalUserPlantedTrees;
-            return true;
-        } else {
-            System.out.println("No trees were added to your count" + " " + timeFrame + ".");
-            return false;
-        }
-    }
-
-    public void openLinkForTreeDonation(String url) {
-        if (url == null || url.isBlank()) {
-            url = "https://teamtrees.org/"; //Default to TeamTrees official donation page
-        }        System.out.println("Redirecting to " + url + " \n \uD83E\uDD73 \uD83E\uDD73 \uD83E\uDD73");
-
-        try {
-            if(Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {   //Checks if the current desktop environment supports browsing URLs
-
-                Desktop.getDesktop().browse(new URI(url));    // Opens the provided URL in the default web browser
-            } else {
-                System.out.println("Couldn't open the link, please visit " + url + " to make your donation!");     //Prints message if browsing is not supported
-            }
-        } catch (Exception e) {
-            System.out.println("Couldn't open the link, please visit " + url);
-            e.printStackTrace();
-        }
-    }
-
-    public boolean pay2Plant(String timeFrame) {
-        int trees = userInput("How many  🌳🌳🌳 do you want to sponsor " + timeFrame + "?");
-        if (trees > paidPlantedTrees) {
-            paidPlantedTrees += trees;
-            openLinkForTreeDonation("");
-            return true;
-        } else {
-            System.out.println("No trees were added to your count" + " " + timeFrame + ".");
-            return false;
-        }
     }
 }
