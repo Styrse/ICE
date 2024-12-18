@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class MainMenuSceneController {
@@ -20,7 +20,7 @@ public class MainMenuSceneController {
     private Button settingsButton;
 
     @FXML
-    private Text plantedTreesLabel;
+    private Label plantedTreesLabel;
 
     @FXML
     public void handleTransportButton(ActionEvent event) {
