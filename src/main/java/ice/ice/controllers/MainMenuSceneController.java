@@ -1,23 +1,39 @@
 package ice.ice.controllers;
 
 import ice.ice.Platform;
+import ice.ice.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainMenuSceneController {
     public void initialize() {
         plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
+
+        co2CounterLabel.setText(String.format("%.0f", User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) + " / " + String.format("%.0f", User.averageCo2EmissionPrYear/365));
+
+        Image embarrassedSmiley = new Image("file:src/main/resources/images/smiley/embarrassed.png");
+        Image worriedSmiley = new Image("file:src/main/resources/images/smiley/worried.png");
+        Image angrySmiley = new Image("file:src/main/resources/images/smiley/angry.png");
+        if (User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage() < User.co2Goal2030){
+            smileyImage.setImage(embarrassedSmiley);
+        } else if (User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage() < User.fixedCo2PrYear) {
+            smileyImage.setImage(worriedSmiley);
+        } else if (User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage() > User.fixedCo2PrYear) {
+            smileyImage.setImage(angrySmiley);
+        }
     }
 
     @FXML
-    private Button co2Button;
+    private ImageView smileyImage;
 
     @FXML
-    private Button settingsButton;
+    private Label co2CounterLabel;
 
     @FXML
     private Label plantedTreesLabel;

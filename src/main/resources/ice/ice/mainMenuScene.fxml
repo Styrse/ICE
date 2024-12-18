@@ -13,7 +13,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ice.ice.controllers.MainMenuSceneController">
    <children>
@@ -23,7 +22,7 @@
                <children>
                   <Button layoutX="77.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleTransportButton" text="Add transport" />
                   <Button layoutX="192.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleTreeButton" text="Tree" />
-                  <Button fx:id="settingsButton" layoutX="260.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
+                  <Button layoutX="260.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
                   <ImageView fitHeight="51.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/logo.png" />
@@ -38,16 +37,17 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
                               <ProgressBar layoutX="49.0" layoutY="137.0" prefHeight="48.0" prefWidth="234.0" progress="0.0" />
-                              <Text layoutX="101.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250/300">
+                              <ImageView fx:id="smileyImage" fitHeight="48.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="co2CounterLabel" alignment="CENTER" layoutX="22.0" layoutY="89.0" prefHeight="35.0" prefWidth="289.0">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font size="24.0" />
                                  </font>
-                              </Text>
-                              <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/smiley/SmilingFaceEmoji.png" />
-                                 </image>
-                              </ImageView>
+                              </Label>
+                              <Label layoutX="130.0" layoutY="62.0" text="Co2 grams">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
