@@ -19,8 +19,16 @@ public class MainMenuSceneController {
 
     }
 
-    public void handleCo2Menu(ActionEvent event)   {
-        Scene scene = ControllersUtil.loadScene("Co2MainScene.fxml");
+    @FXML
+    public void handleTransportButton(ActionEvent event) {
+        Scene scene = ControllersUtil.loadScene("co2MainScene.fxml");
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        ControllersUtil.setShowScene(stage, scene);
+    }
+
+    @FXML
+    public void handleTreeButton(ActionEvent event){
+        Scene scene = ControllersUtil.loadScene("plantTreeScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }

@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 
 public class AddressSceneController {
     public void initialize() {
-
         countryChoiceBox.getItems().addAll("Denmark", "Sweden", "Italy");
         countryChoiceBox.setValue("Choose country");
     }

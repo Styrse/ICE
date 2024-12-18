@@ -22,7 +22,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="49.0" layoutY="199.0" prefHeight="48.0" prefWidth="236.0" text="How often do you go to work/school a week" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="49.0" layoutY="199.0" prefHeight="48.0" prefWidth="236.0" text="How often do you go to work/school a week?" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
