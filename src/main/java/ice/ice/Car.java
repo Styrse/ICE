@@ -85,7 +85,7 @@ public class Car {
     @Override
     public String toString() {
         return "UserCar{" +
-                "User:" + user.getUsername() + '\'' + //TODO Test if currentUser gives username or whole information in user class.
+                "User:" + user.getUsername() + '\'' +
                 ", LicensePlate='" + licensePlate +
                 ", Brand=" + carBrand +
                 ", FuelType=" + fuelType +

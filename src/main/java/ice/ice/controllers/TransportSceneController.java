@@ -40,7 +40,6 @@ public class TransportSceneController {
         String recurringTrips = recurringTripsTextField.getText().trim();
         String kmPrTrip = kmPrTripTextField.getText().trim();
 
-        //TODO Simplify
         if (recurringTrips.isEmpty() || kmPrTrip.isEmpty()){
             invalidInput.setText("Fields cannot be empty");
         } else {
@@ -66,7 +65,6 @@ public class TransportSceneController {
                         invalidInput.setText("Please select a type of transportation");
                     } else {
                         if (carRadioButton.isSelected()){
-                            //Todo Attributes to recurring trips for user
                             Scene scene = ControllersUtil.loadScene("carCreationScene.fxml");
                             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                             ControllersUtil.setShowScene(stage, scene);
@@ -78,14 +76,6 @@ public class TransportSceneController {
                     }
                 }
             }
-        }
-    }
-
-    public void checkIfNumber(String check){
-        if (!check.equals("^[0-9]")){
-            invalidInput.setText("Please only enter numbers");
-        } else {
-
         }
     }
 

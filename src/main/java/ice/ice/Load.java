@@ -8,19 +8,16 @@ public class Load {
     private ArrayList<Clothes> clothes;
     private ArrayList<Fabric> fabrics;
     private ArrayList<Transport> transports;
-    //private ArrayList<Car> cars;
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
-    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods/*, ArrayList<Car> cars*/) {
+    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
         this.users = users;
         this.clothes = clothes;
         this.fabrics = fabrics;
         this.transports = transports;
         this.renewableEnergies = renewableEnergies;
         this.foods = foods;
-        //this.cars = cars;
-        //this.fabrics = loadFabricsAL();
     }
 
     public void loadSetup(){
@@ -28,7 +25,6 @@ public class Load {
         loadClothes();
         loadFabrics();
         loadPublicTransportData();
-        //loadCarData();
     }
 
     public void loadPublicTransportData()  {
@@ -40,16 +36,6 @@ public class Load {
         }
     }
 
-    //TODO loadcardata value 0 should be user.
-    /*public void loadCarData()   {
-        ArrayList<String> data = FileIO.fileReader("src/main/java/data/emission/Cardata");
-                for (String s : data)   {
-                    String[] values = s.split(";");
-                    Car tmpCar = new Car (values[0], values[1].trim(), values[2].trim(), values[3].trim(),Float.parseFloat(values[4].trim()));
-                    cars.add(tmpCar);
-                }
-    }*/
-
     public void loadUsers(){
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/users.csv");
         for (String data : temp) {
@@ -58,7 +44,7 @@ public class Load {
             String name = tempString[1].trim();
             String password = tempString[2].trim();
             String gender = tempString[3].trim();
-            LocalDate birthday = LocalDate.parse(tempString[4].trim());    //TODO parse to Date data type
+            LocalDate birthday = LocalDate.parse(tempString[4].trim());
             String[] addressArray = tempString[5].split(":");
             Address address = new Address(addressArray[0].trim(), addressArray[1].trim(), addressArray[2].trim(), addressArray[3].trim(), addressArray[4].trim());
 
@@ -73,17 +59,6 @@ public class Load {
             fabrics.add(new Fabric(tempString[0].trim()));
         }
     }
-/*
-    public ArrayList<Fabric> loadFabricsAL(String path) {
-        ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/fabric.csv");
-        for (String data : temp){
-            String[] tempString = data.split(";");
-            fabrics.add(new Fabric(tempString[0].trim(), Double.parseDouble(tempString[1].trim())));
-        }
-        return fabrics;
-    }
-
- */
 
     public double getFabricCo2PrGram(ArrayList<Fabric> fabrics, int index){
              Fabric currentFabric =   this.fabrics.get(index);
@@ -103,11 +78,9 @@ public class Load {
 
     public void loadClothes(){
         ArrayList<String> temp = FileIO.fileReader("src/main/java/data/emission/clothes/clothes.csv");
-        int i = 0;
-        for (String data : temp){
-            String[] tempString = data.split(";");
+        for (int i = 0; i < temp.size(); i++){
+            String[] tempString = temp.get(i).split(";");
             clothes.add(new Clothes(new Fabric(tempString[0].trim()), Integer.parseInt(tempString[1].trim())));
-            i++;                                                                            // counts up index of fabric ArrayList
         }
     }
 }

@@ -18,11 +18,8 @@ public class FileIO {
                     data.add(scanner.nextLine());
                 }
             } catch (FileNotFoundException e) {
-                //TODO When error gets catched notify IT department by mail, if there is a method for that
                 throw new RuntimeException(e);
             }
-        } else {
-            //TODO Notify IT
         }
         return data;
     }

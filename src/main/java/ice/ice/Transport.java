@@ -39,7 +39,7 @@ public class Transport extends Emission {
 
     public double getDistance() {
         return this.distance;
-    }   // end getDistance()
+    }
 
     public double emissionPrMin()   {
         double kmPrMin = averageSpeed/60;
@@ -67,7 +67,4 @@ public class Transport extends Emission {
                 ", distanceKm=" + distance +
                 "}";
     }
-
-    //TODO data for public transport only tell you about overall co2 emission instead of pr person emission when taking public transport. Find more relevant data.
-    // This is done in Emissions calcEmissionsFromAL & calcOffsetsFromAL
 }
