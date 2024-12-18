@@ -16,7 +16,6 @@ public class ControllersUtil {
             scene = new Scene(fxmlLoader.load());
         } catch (IOException e) {
             throw new RuntimeException(e);
-            //TODO Notify IT
         }
         return scene;
     }

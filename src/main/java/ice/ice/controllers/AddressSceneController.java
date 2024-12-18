@@ -57,6 +57,5 @@ public class AddressSceneController {
         Scene scene = ControllersUtil.loadScene("createUserScene.fxml");
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
-        //TODO Maybe add deleteUser when going back to not have unused users - Look at this for all go back buttons in Controllers
     }
 }

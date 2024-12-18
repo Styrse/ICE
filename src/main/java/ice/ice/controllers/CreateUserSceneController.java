@@ -9,7 +9,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class CreateUserSceneController {
     public void initialize() {
@@ -51,7 +50,6 @@ public class CreateUserSceneController {
             invalidInput.setText(username + " has already been taken");
         } else if (!password.equals(confirmPassword)) {
             invalidInput.setText("Password doesn't match");
-            //TODO Strong password
         } else if (name.isEmpty()) {
             invalidInput.setText("Name field cannot be empty");
         } else if (gender.equals("Male") || gender.equals("Female") || gender.equals("Non-binary") || gender.equals("Transgender") || gender.equals("Other") || gender.equals("Prefer not to say")) {

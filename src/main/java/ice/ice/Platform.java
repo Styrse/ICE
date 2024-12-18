@@ -10,7 +10,7 @@ public class Platform {
     private ArrayList<Clothes> clothes;
     private ArrayList<Fabric> fabrics;
     private ArrayList<Transport> transports;
-    private ArrayList<RenewableEnergy> renewableEnergies;   //TODO load
+    private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
     private IT it;
     private Load load;

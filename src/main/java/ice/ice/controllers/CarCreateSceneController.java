@@ -53,7 +53,6 @@ public class CarCreateSceneController {
             invalidInput.setText("Please only add license plate or manually add car");
         } else if (!licensePlate.isEmpty() && kmPrLiter.isEmpty()) {
             if (!licensePlate.isEmpty()){
-                //TODO Check the if statement up against an API
                 //srry Styrbjørn efter implementeringen af den nye car class måtte vi bruge den hardcoded value som er i constructoren i car klassen
                 Platform.getInstance().getCurrentUser().setMyCar(new Car(Platform.getInstance().getCurrentUser(),
                         licensePlate,
@@ -88,5 +87,4 @@ public class CarCreateSceneController {
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         ControllersUtil.setShowScene(stage, scene);
     }
-
 }
