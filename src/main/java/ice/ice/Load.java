@@ -12,21 +12,16 @@ public class Load {
     private ArrayList<RenewableEnergy> renewableEnergies;
     private ArrayList<Food> foods;
 
-    public Load() {
-        //this.fabrics = loadFabricsAL();
-    }
-
-    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports/*, ArrayList<Car> cars*/,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods) {
+    public Load(ArrayList<User> users, ArrayList<Clothes> clothes, ArrayList<Fabric> fabrics, ArrayList<Transport> transports,ArrayList<RenewableEnergy> renewableEnergies, ArrayList<Food> foods/*, ArrayList<Car> cars*/) {
         this.users = users;
         this.clothes = clothes;
         this.fabrics = fabrics;
         this.transports = transports;
-        //this.cars = cars;
         this.renewableEnergies = renewableEnergies;
         this.foods = foods;
+        //this.cars = cars;
+        //this.fabrics = loadFabricsAL();
     }
-
-
 
     public void loadSetup(){
         loadUsers();
