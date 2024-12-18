@@ -1,6 +1,5 @@
 package ice.ice.controllers;
 
-import ice.ice.Plane;
 import ice.ice.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
