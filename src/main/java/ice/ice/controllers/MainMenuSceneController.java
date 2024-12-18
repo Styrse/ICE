@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -26,7 +27,12 @@ public class MainMenuSceneController {
         } else if (User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage() > User.fixedCo2PrYear) {
             smileyImage.setImage(angrySmiley);
         }
+
+        co2ProgressBar.setProgress(((User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) / User.averageCo2EmissionPrYear/365) * 100);
     }
+
+    @FXML
+    private ProgressBar co2ProgressBar;
 
     @FXML
     private ImageView smileyImage;
