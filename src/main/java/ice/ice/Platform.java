@@ -12,9 +12,10 @@ public class Platform {
     private ArrayList<Transport> transports;
     private ArrayList<RenewableEnergy> renewableEnergies;   //TODO load
     private ArrayList<Food> foods;
+    private IT it;
     private Load load;
-    private static Platform instance;
     private Save save;
+    private static Platform instance;
 
     public Platform(String platformName) {
         this.platformName = platformName;
@@ -24,9 +25,10 @@ public class Platform {
         this.transports = new ArrayList<>();
         this.renewableEnergies = new ArrayList<>();
         this.foods = new ArrayList<>();
+        this.it = new IT();
         this.load = new Load(users, clothes, fabrics, transports, renewableEnergies, foods);
-        instance = this;
         this.save = new Save();
+        instance = this;
     }
 
     public static Platform getInstance() {
