@@ -17,6 +17,10 @@ public class User {
     private int recurringTrips;
     private float tripDistance;
     private int plantedTrees;
+    private double dailyCo2Usage = 0;
+
+    public static double averageCo2EmissionPrYear = 7000000;
+    public static double fixedCo2PrYear = 3000000;
 
     public User(String username, String name, String password, String gender, LocalDate birthday) {
         this.username = username;
@@ -140,6 +144,10 @@ public class User {
 
     public void addPlantedTrees(int amount){
         plantedTrees += amount;
+    }
+
+    public double getDailyCo2Usage() {
+        return dailyCo2Usage;
     }
 
     public String saveUserInfo(){

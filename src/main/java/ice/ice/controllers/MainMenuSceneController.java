@@ -1,6 +1,7 @@
 package ice.ice.controllers;
 
 import ice.ice.Platform;
+import ice.ice.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -11,10 +12,11 @@ import javafx.stage.Stage;
 public class MainMenuSceneController {
     public void initialize() {
         plantedTreesLabel.setText("Planted trees: " + Platform.getInstance().getCurrentUser().getPlantedTrees());
+        co2CounterLabel.setText(String.format("%.0f", User.fixedCo2PrYear/365 + Platform.getInstance().getCurrentUser().getDailyCo2Usage()) + " / " + String.format("%.0f", User.averageCo2EmissionPrYear/365));
     }
 
     @FXML
-    private Button co2Button;
+    private Label co2CounterLabel;
 
     @FXML
     private Button settingsButton;
