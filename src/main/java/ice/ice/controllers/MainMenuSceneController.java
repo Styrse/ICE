@@ -36,9 +36,6 @@ public class MainMenuSceneController {
     private Label co2CounterLabel;
 
     @FXML
-    private Button settingsButton;
-
-    @FXML
     private Label plantedTreesLabel;
 
     @FXML
